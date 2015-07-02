@@ -58,6 +58,8 @@
 <!-- ================================================ Form Bean Definitions -->
 
     <form-beans>
+    <form-bean	name="InputForm" 
+    				type="comarch.zadanie1.forms.PersonalInformationForm"/>
     <!-- sample form bean descriptor for an ActionForm
         <form-bean
             name="inputForm"
@@ -110,6 +112,17 @@
         <action
             path="/Welcome"
             forward="/pages/Welcome.jsp"/>
+		<action
+            path="/Input"
+            type="comarch.zadanie1.actions.PersonalInformationAction"
+            name="InputForm"
+            scope="request"
+            input="/pages/input.jsp"
+            validate="true">
+            <forward name="success" path="/pages/inputsuccess.jsp"/>
+       	</action>
+
+            
 
     <!-- sample input and input submit actions
 

@@ -1,12 +1,6 @@
 package comarch.zadanie1.forms;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.apache.struts.action.ActionForm;
-import org.apache.struts.action.ActionMapping;
-import org.apache.struts.action.ActionErrors;
-
-
 
 
 
@@ -42,11 +36,6 @@ public class PersonalInformationForm extends ActionForm {
 	
 	public void setName(String name) {
 		this.name = name;
-	}
-	public ActionErrors validate(ActionMapping mapping, HttpServletRequest request)
-	{
-		ActionErrors errors = super.validate(mapping, request);
-		return errors;
 	}
 
 

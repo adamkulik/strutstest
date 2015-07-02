@@ -1,6 +1,5 @@
 package comarch.zadanie1.actions;
 
-import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
@@ -11,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-public class PersonalInformationAction extends Action{
+public class PersonalInformationAction extends ActionForward{
 
 	
 	private static final long serialVersionUID = 1L;
@@ -22,9 +21,10 @@ public class PersonalInformationAction extends Action{
 	 
 		PersonalInformationForm personalInformation = (PersonalInformationForm) form;
 		
+		System.out.print( personalInformation.getName());
+		System.out.print( personalInformation.getLastName());
 	
 			return mapping.findForward("success");
 		}
-
 
 }
