@@ -17,12 +17,7 @@
 <BR/>
 <bean:message key="form.sex"/><%= request.getAttribute("sex") %>
 <BR/>
-<bean:message key="form.day"/><%= request.getAttribute("day") %>
-<BR/>
-<bean:message key="form.month"/><%= request.getAttribute("month") %>
-<BR/>
-<bean:message key="form.year"/><%= request.getAttribute("year") %>
-<BR/>
+
 
 </body>
 </html>
