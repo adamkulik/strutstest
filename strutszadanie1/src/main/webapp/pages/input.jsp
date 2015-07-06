@@ -32,7 +32,6 @@
 		<BR />
 		<P />
 
-<<<<<<< HEAD
 		<div>
 
 			<bean:message key="radio.name" />
@@ -43,18 +42,6 @@
 
 			<html:radio property="sex" value="female" />
 			<bean:message key="radio.sex.female" />
-=======
-		<html:text property="lastName" size="16" maxlength="16"/>
-		<BR/>
-		<P/>
-		<html:radio property="sex" value="M" />
-		<BR/>
-		<html:radio property="sex" value="K" />
-		<BR/>
-		<html:reset value="Reset" />
-		<BR/>  
-		<html:submit property="success">
->>>>>>> origin/test
 
 		</div>
 
