@@ -14,7 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 public class PersonalInformationAction extends Action{
 
 	
-	private static final long serialVersionUID = 1L;
 	
 	public ActionForward execute(ActionMapping mapping,ActionForm form,
 			HttpServletRequest request,HttpServletResponse response)

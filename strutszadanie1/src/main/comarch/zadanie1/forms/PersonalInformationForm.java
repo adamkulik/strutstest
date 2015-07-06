@@ -60,18 +60,15 @@ public class PersonalInformationForm extends ActionForm {
 		validateStrings(name, "name", errors);
 		validateStrings(lastName, "lastName", errors);
 		validateMiddleName(middleName, "middleName", errors);
-		validateSex(sex, "sex", errors);
+		validateStrings(sex, "sex", errors);
 		return errors;
 
 	}
 
-	public void validateSex(String field, String fieldName, ActionErrors errors) {
+	
 
-		if (field == null)
-			errors.add(field, new ActionMessage("error." + fieldName
-					+ ".required"));
 
-	}
+
 
 	public void validateMiddleName(String field, String fieldName,
 			ActionErrors errors) {
@@ -85,12 +82,19 @@ public class PersonalInformationForm extends ActionForm {
 			ActionErrors errors) {
 
 		if (field == null || field.length() < 1)
+		{
 			errors.add(field,
-					new ActionMessage("error." + fieldName + ".empty"));
+			new ActionMessage("error." + fieldName + ".empty"));
+		}
+	
 
-		if (!field.matches("[a-zA-Z]*"))
+		else if (!field.matches("[a-zA-Z]*"))
+		{
 			errors.add(field, new ActionMessage("error." + fieldName
 					+ ".required"));
-	}
+	
+		}
+			
 
+	}
 }
