@@ -1,3 +1,4 @@
+
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 
 <%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html"%>
@@ -15,11 +16,10 @@
 		<bean:message key="exercise01.formpage.title" />
 	</h2>
 
-	<html:errors />
-
+	<html:errors />	
+    <html:errors property="error.lastName.required" />
+    
 	<html:form action="/Input" method="GET">
-
-
 
 		<bean:message key="prompt.customer.firstname" />:
 		<html:text property="name" size="16" maxlength="16" />

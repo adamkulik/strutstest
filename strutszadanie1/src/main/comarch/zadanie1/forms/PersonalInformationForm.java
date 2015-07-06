@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.action.ActionErrors;
+import org.apache.struts.action.ActionMessage;
 
 
 
@@ -50,10 +51,35 @@ public class PersonalInformationForm extends ActionForm {
 	public void setSex(String sex) {
 		this.sex = sex;
 	}
-	public ActionErrors validate(ActionMapping mapping, HttpServletRequest request)
-	{
-		ActionErrors errors = super.validate(mapping, request);
+	
+	public ActionErrors validate(ActionMapping mapping,
+			HttpServletRequest request) {
+		ActionErrors errors = new ActionErrors();
+
+		System.out.print(name);
+		System.out.print(lastName);
+		System.out.print(middleName);
+
+		validateStrings(name, errors);
+		validateStrings(lastName, errors);
+		validateMiddleName(middleName, errors);
+
 		return errors;
+
+	}
+	public void validateMiddleName(String field, ActionErrors errors) {
+	
+		if (!field.matches("[a-zA-Z]*"))
+			errors.add(field, new ActionMessage("error." + field + ".required"));
+	}
+
+	public void validateStrings(String field, ActionErrors errors) {
+
+		if (field == null || field.length() < 1)
+			errors.add(field, new ActionMessage("error." + field + ".empty"));
+
+		if (!field.matches("[a-zA-Z]*"))
+			errors.add(field, new ActionMessage("error." + field + ".required"));
 	}
 
 
