@@ -20,11 +20,10 @@ public class PersonalInformationAction extends Action{
 	        throws Exception {
 	 
 		PersonalInformationForm personalInformation = (PersonalInformationForm) form;
-		
-			request.setAttribute("name", personalInformation.getName());
-			request.setAttribute("middleName", personalInformation.getMiddleName());
-			request.setAttribute("lastName", personalInformation.getLastName());
-			request.setAttribute("sex",personalInformation.getSex());
+			request.getSession().setAttribute("name", personalInformation.getName());
+			request.getSession().setAttribute("middleName", personalInformation.getMiddleName());
+			request.getSession().setAttribute("lastName", personalInformation.getLastName());
+			request.getSession().setAttribute("sex",personalInformation.getSex());
 			return mapping.findForward("success");
 		}
 

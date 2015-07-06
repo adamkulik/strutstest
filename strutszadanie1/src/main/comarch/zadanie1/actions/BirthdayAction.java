@@ -20,10 +20,9 @@ public class BirthdayAction extends Action{
 	        throws Exception {
 	 
 		BirthdayForm birthday = (BirthdayForm) form;
-		
-			request.setAttribute("day", birthday.getDay());
-			request.setAttribute("month", birthday.getMonth());
-			request.setAttribute("year", birthday.getYear());
+			request.getSession().setAttribute("day", birthday.getDay());
+			request.getSession().setAttribute("month", birthday.getMonth());
+			request.getSession().setAttribute("year", birthday.getYear());
 			return mapping.findForward("success");
 		}
 

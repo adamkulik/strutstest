@@ -9,19 +9,19 @@
 <title>Insert title here</title>
 </head>
 <body>
-<bean:message key="form.name"/><%= request.getAttribute("name") %>
+<bean:message key="form.name"/><%= session.getAttribute("name") %>
 <BR/>
-<bean:message key="form.middlename"/><%= request.getAttribute("middleName") %>
+<bean:message key="form.middlename"/><%= session.getAttribute("middleName") %>
 <BR/>
-<bean:message key="form.lastname"/><%= request.getAttribute("lastName") %>
+<bean:message key="form.lastname"/><%= session.getAttribute("lastName") %>
 <BR/>
-<bean:message key="form.sex"/><%= request.getAttribute("sex") %>
+<bean:message key="form.sex"/><%= session.getAttribute("sex") %>
 <BR/>
-<bean:message key="form.day"/><%= request.getAttribute("day") %>
+<bean:message key="form.day"/><%= session.getAttribute("day") %>
 <BR/>
-<bean:message key="form.month"/><%= request.getAttribute("month") %>
+<bean:message key="form.month"/><%= session.getAttribute("month") %>
 <BR/>
-<bean:message key="form.year"/><%= request.getAttribute("year") %>
+<bean:message key="form.year"/><%= session.getAttribute("year") %>
 <BR/>
 
 </body>
