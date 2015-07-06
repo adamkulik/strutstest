@@ -100,7 +100,8 @@
         <!-- Demonstrates using index.jsp to forward -->
         <forward
             name="welcome"
-            path="/Welcome.do"/>
+             path="/Test.do"/>
+               
     </global-forwards>
 
 

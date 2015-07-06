@@ -1,27 +1,49 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
 
-<%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html" %>
-<%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean" %>
+<%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html"%>
+<%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean"%>
 
 <html:html xhtml="true">
 
 <head>
-	<title></title>
-	<html:base/>
+<title></title>
+<html:base />
 </head>
 
 <div align="center">
-	<h2></h2>
+	<h2>
+		<bean:message key="exercise01.formpage.title" />
+	</h2>
 
-	<html:errors/>
+	<html:errors />
 
 	<html:form action="/Input" method="GET">
 
 
-		<html:text property="name" size="16" maxlength="16"/>
-		<BR/>
 
+		<bean:message key="prompt.customer.firstname" />:
+		<html:text property="name" size="16" maxlength="16" />
+		<BR />
+		<bean:message key="prompt.customer.middlename" />:
+		<html:text property="middleName" size="16" maxlength="16" />
+		<BR />
+		<bean:message key="prompt.customer.lastname" />:
+		<html:text property="lastName" size="16" maxlength="16" />
+		<BR />
+		<P />
 
+<<<<<<< HEAD
+		<div>
+
+			<bean:message key="radio.name" />
+			:
+
+			<html:radio property="sex" value="male" />
+			<bean:message key="radio.sex.male" />
+
+			<html:radio property="sex" value="female" />
+			<bean:message key="radio.sex.female" />
+=======
 		<html:text property="lastName" size="16" maxlength="16"/>
 		<BR/>
 		<P/>
@@ -32,16 +54,24 @@
 		<html:reset value="Reset" />
 		<BR/>  
 		<html:submit property="success">
+>>>>>>> origin/test
 
-    	</html:submit>
+		</div>
+
+
+		<BR />
+
+		<html:reset value="Reset" />
 
     	&nbsp;
+    	
+		<html:submit property="step" />
 
-    	<html:cancel>
+		<!-- <html:cancel>
  
-    	</html:cancel>
+    	</html:cancel> -->
 
-  	</html:form>
+	</html:form>
 </div>
 </body>
 
