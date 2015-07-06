@@ -67,9 +67,6 @@ public class PersonalInformationForm extends ActionForm {
 
 	
 
-
-
-
 	public void validateMiddleName(String field, String fieldName,
 			ActionErrors errors) {
 
