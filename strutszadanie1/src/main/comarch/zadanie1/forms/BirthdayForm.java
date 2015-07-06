@@ -49,7 +49,7 @@ public class BirthdayForm extends ActionForm {
 		ActionErrors errors = new ActionErrors();
 		validateBirthday(1, 31, day, errors, "day");
 		validateBirthday(1, 12, month, errors, "month");
-		validateBirthday(1900, Calendar.getInstance().get(Calendar.YEAR), day, errors, "year");
+		validateBirthday(1900, Calendar.getInstance().get(Calendar.YEAR), year, errors, "year");
 
 		return errors;
 
