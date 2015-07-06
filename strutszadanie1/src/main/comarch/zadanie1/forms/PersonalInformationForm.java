@@ -7,12 +7,7 @@ import org.apache.struts.action.ActionMapping;
 import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionMessage;
 
-
-
-
-
 public class PersonalInformationForm extends ActionForm {
-
 
 	private static final long serialVersionUID = 1L;
 
@@ -20,38 +15,39 @@ public class PersonalInformationForm extends ActionForm {
 	private String middleName;
 	private String lastName;
 	private String sex;
-	
-	
+
 	public String getMiddleName() {
 		return middleName;
 	}
-	
+
 	public void setMiddleName(String middleName) {
 		this.middleName = middleName;
 	}
-	
+
 	public String getLastName() {
 		return lastName;
 	}
-	
+
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	
+
 	public String getName() {
 		return name;
 	}
-	
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public String getSex() {
 		return sex;
 	}
+
 	public void setSex(String sex) {
 		this.sex = sex;
 	}
-	
+
 	public ActionErrors validate(ActionMapping mapping,
 			HttpServletRequest request) {
 		ActionErrors errors = new ActionErrors();
@@ -59,29 +55,42 @@ public class PersonalInformationForm extends ActionForm {
 		System.out.print(name);
 		System.out.print(lastName);
 		System.out.print(middleName);
+		System.out.print(sex);
 
-		validateStrings(name, errors);
-		validateStrings(lastName, errors);
-		validateMiddleName(middleName, errors);
-
+		validateStrings(name, "name", errors);
+		validateStrings(lastName, "lastName", errors);
+		validateMiddleName(middleName, "middleName", errors);
+		validateSex(sex, "sex", errors);
 		return errors;
 
 	}
-	public void validateMiddleName(String field, ActionErrors errors) {
-	
-		if (!field.matches("[a-zA-Z]*"))
-			errors.add(field, new ActionMessage("error." + field + ".required"));
+
+	public void validateSex(String field, String fieldName, ActionErrors errors) {
+
+		if (field == null)
+			errors.add(field, new ActionMessage("error." + fieldName
+					+ ".required"));
+
 	}
 
-	public void validateStrings(String field, ActionErrors errors) {
+	public void validateMiddleName(String field, String fieldName,
+			ActionErrors errors) {
+
+		if (!field.matches("[a-zA-Z]*"))
+			errors.add(field, new ActionMessage("error." + fieldName
+					+ ".required"));
+	}
+
+	public void validateStrings(String field, String fieldName,
+			ActionErrors errors) {
 
 		if (field == null || field.length() < 1)
-			errors.add(field, new ActionMessage("error." + field + ".empty"));
+			errors.add(field,
+					new ActionMessage("error." + fieldName + ".empty"));
 
 		if (!field.matches("[a-zA-Z]*"))
-			errors.add(field, new ActionMessage("error." + field + ".required"));
+			errors.add(field, new ActionMessage("error." + fieldName
+					+ ".required"));
 	}
-
-
 
 }

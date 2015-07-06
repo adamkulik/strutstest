@@ -60,6 +60,7 @@
     <form-beans>
     <form-bean	name="InputForm" 
     				type="comarch.zadanie1.forms.PersonalInformationForm"/>
+    				
     <!-- sample form bean descriptor for an ActionForm
         <form-bean
             name="inputForm"

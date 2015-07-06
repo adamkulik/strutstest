@@ -17,7 +17,7 @@
 	</h2>
 
 	<html:errors />	
-    <html:errors property="error.lastName.required" />
+   
     
 	<html:form action="/Input" method="GET">
 
