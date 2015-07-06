@@ -60,6 +60,8 @@
     <form-beans>
     <form-bean	name="InputForm" 
     				type="comarch.zadanie1.forms.PersonalInformationForm"/>
+    <form-bean  name="BirthdayForm"
+    				type="comarch.zadanie1.forms.BirthdayForm"/>
     				
     <!-- sample form bean descriptor for an ActionForm
         <form-bean
@@ -122,11 +124,27 @@
             path="/Input"
             type="comarch.zadanie1.actions.PersonalInformationAction"
             name="InputForm"
-            scope="request"
+            scope="session"
             input="/pages/input.jsp"
             validate="true">
-            <forward name="success" path="/pages/inputsuccess.jsp"/>
+            <forward name="success" path="/Test2.do"/>
        	</action>
+       	<action
+       		path="/Test2"
+       		parameter="/pages/input2.jsp"
+       		type="org.apache.struts.actions.ForwardAction"
+       		/>
+       	<action
+       		path="/Input2"
+       		type="comarch.zadanie1.actions.BirthdayAction"
+       		name="BirthdayForm"
+       		scope="session"
+       		input="/pages/input2.jsp"
+       		validate="true">
+       		<forward name="success" path="/pages/inputsuccess.jsp"/>
+       		<forward name="backwards" path="/Test"/>
+       	</action>
+       	
 
             
 
