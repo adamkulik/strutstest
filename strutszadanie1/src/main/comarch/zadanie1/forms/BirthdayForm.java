@@ -57,9 +57,11 @@ public class BirthdayForm extends ActionForm {
 
 	public boolean validateBirthday(int minRange, int maxRange, String value,
 			ActionErrors errors, String fieldName) {
-
-		if (!value.matches("[a-zA-Z]*")) {
-
+			
+		if (value.matches("[a-zA-Z]*")) {
+			errors.add(value, new ActionMessage("error."
+					+ fieldName));
+			
 			return false;
 		}
 		int target = Integer.parseInt(value);
