@@ -16,7 +16,7 @@ public class BirthdayForm extends ActionForm {
 	private static final long serialVersionUID = 1L;
 
 	private String day;
-	private String mounth;
+	private String month;
 	private String year;
 
 	public String getDay() {
@@ -27,12 +27,12 @@ public class BirthdayForm extends ActionForm {
 		this.day = day;
 	}
 
-	public String getMounth() {
-		return mounth;
+	public String getMonth() {
+		return month;
 	}
 
-	public void setMounth(String mounth) {
-		this.mounth = mounth;
+	public void setMonth(String mounth) {
+		this.month = mounth;
 	}
 
 	public String getYear() {
@@ -48,7 +48,7 @@ public class BirthdayForm extends ActionForm {
 
 		ActionErrors errors = new ActionErrors();
 		validateBirthday(1, 31, day, errors, "day");
-		validateBirthday(1, 12, mounth, errors, "mounth");
+		validateBirthday(1, 12, month, errors, "mounth");
 		validateBirthday(1900, Calendar.getInstance().get(Calendar.YEAR), day, errors, "year");
 
 		return errors;
