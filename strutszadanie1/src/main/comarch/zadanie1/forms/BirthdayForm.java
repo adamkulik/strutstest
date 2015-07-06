@@ -31,8 +31,8 @@ public class BirthdayForm extends ActionForm {
 		return month;
 	}
 
-	public void setMonth(String mounth) {
-		this.month = mounth;
+	public void setMonth(String month) {
+		this.month = month;
 	}
 
 	public String getYear() {
@@ -48,7 +48,7 @@ public class BirthdayForm extends ActionForm {
 
 		ActionErrors errors = new ActionErrors();
 		validateBirthday(1, 31, day, errors, "day");
-		validateBirthday(1, 12, month, errors, "mounth");
+		validateBirthday(1, 12, month, errors, "month");
 		validateBirthday(1900, Calendar.getInstance().get(Calendar.YEAR), day, errors, "year");
 
 		return errors;
