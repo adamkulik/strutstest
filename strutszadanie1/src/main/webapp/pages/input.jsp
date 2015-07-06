@@ -8,10 +8,8 @@
 <head>
 	<title></title>
 	<html:base/>
-	<link rel="stylesheet" href="css/struts-training.css" charset="ISO-8859-1" type="text/css"/>
 </head>
 
-<body background="images/blueAndWhiteBackground.gif">
 <div align="center">
 	<h2></h2>
 
@@ -27,7 +25,12 @@
 		<html:text property="lastName" size="16" maxlength="16"/>
 		<BR/>
 		<P/>
-
+		<html:radio property="sex" value="male" />
+		<BR/>
+		<html:radio property="sex" value="female" />
+		<BR/>
+		<html:reset value="Reset" />
+		<BR/>  
 		<html:submit property="step">
 
     	</html:submit>

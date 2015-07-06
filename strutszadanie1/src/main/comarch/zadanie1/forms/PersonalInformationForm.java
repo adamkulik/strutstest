@@ -18,6 +18,7 @@ public class PersonalInformationForm extends ActionForm {
 	private String name;
 	private String middleName;
 	private String lastName;
+	private String sex;
 	
 	
 	public String getMiddleName() {
@@ -42,6 +43,12 @@ public class PersonalInformationForm extends ActionForm {
 	
 	public void setName(String name) {
 		this.name = name;
+	}
+	public String getSex() {
+		return sex;
+	}
+	public void setSex(String sex) {
+		this.sex = sex;
 	}
 	public ActionErrors validate(ActionMapping mapping, HttpServletRequest request)
 	{
