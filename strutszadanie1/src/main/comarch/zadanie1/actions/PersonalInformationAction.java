@@ -22,7 +22,10 @@ public class PersonalInformationAction extends Action{
 	 
 		PersonalInformationForm personalInformation = (PersonalInformationForm) form;
 		
-	
+			request.setAttribute("name", personalInformation.getName());
+			request.setAttribute("middleName", personalInformation.getMiddleName());
+			request.setAttribute("lastName", personalInformation.getLastName());
+			request.setAttribute("sex",personalInformation.getSex());
 			return mapping.findForward("success");
 		}
 

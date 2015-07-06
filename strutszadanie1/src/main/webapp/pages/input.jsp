@@ -25,13 +25,13 @@
 		<html:text property="lastName" size="16" maxlength="16"/>
 		<BR/>
 		<P/>
-		<html:radio property="sex" value="male" />
+		<html:radio property="sex" value="M" />
 		<BR/>
-		<html:radio property="sex" value="female" />
+		<html:radio property="sex" value="K" />
 		<BR/>
 		<html:reset value="Reset" />
 		<BR/>  
-		<html:submit property="step">
+		<html:submit property="success">
 
     	</html:submit>
 
