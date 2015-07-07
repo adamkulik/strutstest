@@ -62,6 +62,8 @@
     				type="comarch.zadanie1.forms.PersonalInformationForm"/>
     <form-bean  name="BirthdayForm"
     				type="comarch.zadanie1.forms.BirthdayForm"/>
+    <form-bean	name="TicketForm"
+    				type="comarch.zadanie1.forms.TicketForm"/>
     				
     <!-- sample form bean descriptor for an ActionForm
         <form-bean
@@ -141,7 +143,7 @@
        		scope="session"
        		input="/pages/input2.jsp"
        		validate="true">
-       		<forward name="success" path="/pages/Test3.do"/>
+       		<forward name="success" path="/Test3.do"/>
        	</action>
        	<action
        		path="/Test3"
