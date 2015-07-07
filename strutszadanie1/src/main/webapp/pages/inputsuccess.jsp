@@ -23,7 +23,7 @@
 <BR/>
 <bean:message key="form.year"/><%= session.getAttribute("year") %>
 <BR/>
-<bean:message key="form.year"/><%= session.getAttribute("state") %>
+<bean:message key="form.state"/><%= session.getAttribute("state") %>
 
 </body>
 </html>

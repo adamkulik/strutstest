@@ -34,8 +34,8 @@
 		<P />
 <html:select property="state">
 <html:option value="">-- None --</html:option>
-<logic:iterate name="list" id="listid">
-	<html:option value="listid"><bean:write name="listid"/></html:option>
+<logic:iterate name="list" id="listid" type="java.lang.String">
+	<html:option value="<%=listid %>"><bean:write name="listid"/></html:option>
 </logic:iterate>
 </html:select>
 
