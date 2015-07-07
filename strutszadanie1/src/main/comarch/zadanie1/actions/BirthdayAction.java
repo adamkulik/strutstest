@@ -20,6 +20,7 @@ public class BirthdayAction extends Action{
 			HttpServletRequest request,HttpServletResponse response)
 	        throws Exception {
 		BirthdayForm birthday = (BirthdayForm) form;
+			request.getSession().setAttribute("state", birthday.getState());
 			request.getSession().setAttribute("day", birthday.getDay());
 			request.getSession().setAttribute("month", birthday.getMonth());
 			request.getSession().setAttribute("year", birthday.getYear());

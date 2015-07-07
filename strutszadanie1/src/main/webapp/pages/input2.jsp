@@ -32,7 +32,7 @@
 		<html:text property="year" size="4" maxlength="4" />
 		<BR />
 		<P />
-<html:select property="year">
+<html:select property="state">
 <html:option value="">-- None --</html:option>
 <logic:iterate name="list" id="listid">
 	<html:option value="listid"><bean:write name="listid"/></html:option>
