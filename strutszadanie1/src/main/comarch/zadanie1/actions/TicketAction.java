@@ -6,8 +6,6 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import comarch.zadanie1.forms.TicketForm;
-import comarch.zadanie1.tickets.PlaneTicket;
-import comarch.zadanie1.tickets.TrainTicket;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,17 +16,19 @@ public class TicketAction extends Action {
 			HttpServletRequest request,HttpServletResponse response)
 	        throws Exception {
 		TicketForm ticket = (TicketForm) form;
-		if(ticket.getTicketType())
+		request.getSession().setAttribute("ticketType",ticket.getTicketType());
+		if(ticket.getTicketType().equals("train"))
 		{
-			request.getSession().setAttribute("ticketClass",((TrainTicket) ticket.getTicket()).getTicketClass());
-			request.getSession().setAttribute("noTransfer",((TrainTicket) ticket.getTicket()).isNoTransfer());
-			request.getSession().setAttribute("bikeTransport",((TrainTicket) ticket.getTicket()).isBikeTransport());
+			
+			request.getSession().setAttribute("ticketClass",ticket.getTicketClass());
+			request.getSession().setAttribute("noTransfer",ticket.isNoTransfer());
+			request.getSession().setAttribute("bikeTransport",ticket.isBike());
 		}
 		else
 		{
-			request.getSession().setAttribute("extraLuggage",((PlaneTicket) ticket.getTicket()).isExtraLuggage());
-			request.getSession().setAttribute("meal",((PlaneTicket) ticket.getTicket()).isMeal());
-			request.getSession().setAttribute("windowSeat",((PlaneTicket) ticket.getTicket()).isWindowSeat());
+			request.getSession().setAttribute("extraLuggage",ticket.isExtraLuggage());
+			request.getSession().setAttribute("meal",ticket.isMeal());
+			request.getSession().setAttribute("windowSeat",ticket.isWindowSeat());
 		}
 		return mapping.findForward("success");
 		

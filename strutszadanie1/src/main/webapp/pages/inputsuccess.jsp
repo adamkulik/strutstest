@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html" %>
 <%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean" %>
+<%@ taglib uri="/WEB-INF/struts-logic.tld" prefix="logic" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -24,6 +25,29 @@
 <bean:message key="form.year"/><%= session.getAttribute("year") %>
 <BR/>
 <bean:message key="form.state"/><%= session.getAttribute("state") %>
+<BR/>
+<bean:message key="form.tickettype"/><%= session.getAttribute("ticketType") %>
+<BR/>
+<logic:equal name="ticketType" value="train">
+<bean:message key="form.ticketclass"/><%= session.getAttribute("ticketClass") %>
+<BR/>
+<bean:message key="form.notransfer"/> <%= session.getAttribute("noTransfer") %>
+<BR/>
+<bean:message key="form.bike"/><%= session.getAttribute("bikeTransport") %>
+</logic:equal>
+<logic:equal name="ticketType" value="plane">
+<bean:message key="form.extraluggage"/><%= session.getAttribute("extraLuggage") %>
+<BR/>
+<bean:message key="form.windowseat"/><%= session.getAttribute("windowSeat") %>
+<BR/>
+<bean:message key="form.meal"/><%= session.getAttribute("meal") %>
+</logic:equal>
+
+
+
+
+
+
 
 </body>
 </html>

@@ -8,19 +8,17 @@ import org.apache.struts.action.ActionMapping;
 import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionMessage;
 
-import comarch.zadanie1.tickets.Ticket;
 
 public class TicketForm extends ActionForm {
 
 	private static final long serialVersionUID = 1L;
-	private boolean ticketType;
+	private String ticketType;
 	private boolean extraLuggage;
 	private boolean windowSeat;
 	private boolean meal;
 	private String ticketClass;
 	private boolean noTransfer;
 	private boolean bike;
-	private Ticket ticket;
 	public boolean isExtraLuggage() {
 		return extraLuggage;
 	}
@@ -57,17 +55,11 @@ public class TicketForm extends ActionForm {
 	public void setBike(boolean bike) {
 		this.bike = bike;
 	}
-	public boolean getTicketType() {
+	public String getTicketType() {
 		return ticketType;
 	}
-	public void setTicketType(boolean ticketType) {
+	public void setTicketType(String ticketType) {
 		this.ticketType = ticketType;
-	}
-	public Ticket getTicket() {
-		return ticket;
-	}
-	public void setTicket(Ticket ticket) {
-		this.ticket = ticket;
 	}
 	
 	public ActionErrors validate(ActionMapping mapping,
