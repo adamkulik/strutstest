@@ -1,5 +1,6 @@
 package comarch.zadanie1.actions;
 
+
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
@@ -18,7 +19,6 @@ public class BirthdayAction extends Action{
 	public ActionForward execute(ActionMapping mapping,ActionForm form,
 			HttpServletRequest request,HttpServletResponse response)
 	        throws Exception {
-	 
 		BirthdayForm birthday = (BirthdayForm) form;
 			request.getSession().setAttribute("day", birthday.getDay());
 			request.getSession().setAttribute("month", birthday.getMonth());

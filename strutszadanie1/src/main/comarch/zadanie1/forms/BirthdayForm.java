@@ -18,6 +18,7 @@ public class BirthdayForm extends ActionForm {
 	private String day;
 	private String month;
 	private String year;
+	private String state;
 
 	public String getDay() {
 		return day;
@@ -41,6 +42,14 @@ public class BirthdayForm extends ActionForm {
 
 	public void setYear(String year) {
 		this.year = year;
+	}
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
 	}
 
 	public ActionErrors validate(ActionMapping mapping,

@@ -3,6 +3,7 @@
 
 <%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html"%>
 <%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean"%>
+<%@taglib uri="/WEB-INF/struts-logic.tld" prefix="logic"%>
 
 <html:html xhtml="true">
 
@@ -31,6 +32,12 @@
 		<html:text property="year" size="4" maxlength="4" />
 		<BR />
 		<P />
+<html:select property="year">
+<html:option value="">-- None --</html:option>
+<logic:iterate name="list" id="listid">
+	<html:option value="listid"><bean:write name="listid"/></html:option>
+</logic:iterate>
+</html:select>
 
 
 

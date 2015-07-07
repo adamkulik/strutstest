@@ -1,5 +1,10 @@
 package comarch.zadanie1.actions;
 
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
@@ -24,6 +29,13 @@ public class PersonalInformationAction extends Action{
 			request.getSession().setAttribute("middleName", personalInformation.getMiddleName());
 			request.getSession().setAttribute("lastName", personalInformation.getLastName());
 			request.getSession().setAttribute("sex",personalInformation.getSex());
+			Scanner scanner = new Scanner(new File("wojewodztwa.txt"));
+			List<String> vList = new ArrayList<String>();
+			while (scanner.hasNext()) {
+				vList.add(scanner.next());
+			}
+			scanner.close();	
+			request.getSession().setAttribute("list", vList);
 			return mapping.findForward("success");
 		}
 
