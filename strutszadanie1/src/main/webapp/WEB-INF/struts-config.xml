@@ -141,9 +141,22 @@
        		scope="session"
        		input="/pages/input2.jsp"
        		validate="true">
-       		<forward name="success" path="/pages/inputsuccess.jsp"/>
-       		<forward name="backwards" path="/Test"/>
+       		<forward name="success" path="/pages/Test3.do"/>
        	</action>
+       	<action
+       		path="/Test3"
+       		parameter="/pages/input3.jsp"
+       		type="org.apache.struts.actions.ForwardAction"
+       		/>
+       	<action
+       		path="/Input3"
+       		type="comarch.zadanie1.actions.TicketAction"
+       		name="TicketForm"
+       		scope="session"
+       		input="/pages/input3.jsp"
+       		validate="true">
+       		<forward name="success" path="/pages/inputsuccess.jsp"/>
+       	</action>		
        	
 
             
