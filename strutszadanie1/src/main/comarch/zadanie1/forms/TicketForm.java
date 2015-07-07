@@ -69,5 +69,14 @@ public class TicketForm extends ActionForm {
 		return errors;
 
 	}
-
+	public void reset(ActionMapping mapping,
+			HttpServletRequest request) {
+			
+			bike=false;
+			ticketType=null;
+			noTransfer=false;
+			ticketClass=null;
+			windowSeat=false;
+			meal=false;
+		}
 }
