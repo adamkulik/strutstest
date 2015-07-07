@@ -2,9 +2,9 @@ package comarch.zadanie1.forms;
 
 import java.util.Calendar;
 
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
-
 
 import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionForm;
@@ -58,19 +58,28 @@ public class BirthdayForm extends ActionForm {
 		ActionErrors errors = new ActionErrors();
 		validateBirthday(1, 31, day, errors, "day");
 		validateBirthday(1, 12, month, errors, "month");
-		validateBirthday(1900, Calendar.getInstance().get(Calendar.YEAR), year, errors, "year");
-
+		validateBirthday(1900, Calendar.getInstance().get(Calendar.YEAR), year,
+				errors, "year");
+		validateVoivodeship(state, errors);
 		return errors;
+
+	}
+
+	public void validateVoivodeship(String field, ActionErrors errors) {
+		System.out.print(state);
+		if (field == null || field.isEmpty()) {
+			errors.add(field,
+					new ActionMessage("error.voivodeship.empty"));
+		}
 
 	}
 
 	public boolean validateBirthday(int minRange, int maxRange, String value,
 			ActionErrors errors, String fieldName) {
-			
+
 		if (value.matches("[a-zA-Z]*")) {
-			errors.add(value, new ActionMessage("error."
-					+ fieldName));
-			
+			errors.add(value, new ActionMessage("error." + fieldName));
+
 			return false;
 		}
 		int target = Integer.parseInt(value);
