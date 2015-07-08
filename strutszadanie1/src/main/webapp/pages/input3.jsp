@@ -17,6 +17,10 @@
 		<bean:message key="exercise01.formpage.title" />
 	</h2>
 
+
+	<html:link page="/Language3.do?method=english">English</html:link>
+	<html:link page="/Language3.do?method=german">Polski</html:link>
+		
 	<html:errors />
 
 	<html:form action="/Input3" method="GET">
