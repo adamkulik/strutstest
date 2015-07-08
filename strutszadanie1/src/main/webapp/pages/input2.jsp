@@ -16,6 +16,9 @@
 	<h2>
 		<bean:message key="exercise01.formpage.title" />
 	</h2>
+	
+	<html:link page="/Language2.do?method=english">English</html:link>
+	<html:link page="/Language2.do?method=german">Polski</html:link>
 
 	<html:errors />
 

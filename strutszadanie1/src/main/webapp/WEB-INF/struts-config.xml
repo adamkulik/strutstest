@@ -158,8 +158,37 @@
        		input="/pages/input3.jsp"
        		validate="true">
        		<forward name="success" path="/pages/inputsuccess.jsp"/>
-       	</action>		
-       	
+       	</action>
+       			
+       	<action
+			path="/Language"
+			type="comarch.zadanie1.actions.LanguageSelectAction"
+			name="InputForm"
+			parameter="method"
+			validate="false"
+			>
+			<forward name="success" path="/pages/input.jsp"/>
+		</action>	
+		
+		<action
+			path="/Language2"
+			type="comarch.zadanie1.actions.LanguageSelectAction"
+			name="BirthdayForm"
+			parameter="method"
+			validate="false"
+			>
+			<forward name="success" path="/pages/input2.jsp"/>
+		</action>	
+		
+		<action
+			path="/Language3"
+			type="comarch.zadanie1.actions.LanguageSelectAction"
+			name="TicketForm"
+			parameter="method"
+			validate="false"
+			>
+			<forward name="success" path="/pages/input3.jsp"/>
+		</action>
 
             
 
