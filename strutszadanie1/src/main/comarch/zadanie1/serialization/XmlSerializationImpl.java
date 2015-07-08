@@ -1,6 +1,8 @@
 package comarch.zadanie1.serialization;
 
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
 
 import com.thoughtworks.xstream.XStream;
@@ -37,23 +39,38 @@ public class XmlSerializationImpl {
 
 		XStream xstream = new XStream();
 		xstream.autodetectAnnotations(true);
-		try (PrintWriter out = new PrintWriter("Summary.xml")) {
+		try ( FileWriter out= new FileWriter("Summary.xml",true)) {
 
 			if (isPlaneTicket) {
 
 				xstream.alias("Zadanie1", XmlSerializationPlane.class);
 				String x = xstream.toXML(plane);
-				out.println(x);
+				try {
+					out.write(x);
+					out.flush();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+				
 				System.out.print("zapisane- plane");
 			} else {
 				xstream.alias("Zadanie1", XmlSerializationTrain.class);
 				String x = xstream.toXML(train);
-				out.println(x);
+				try {
+					out.write(x);
+					out.flush();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+				
 				System.out.print("zapisane- train");
 			}
 
 		} catch (FileNotFoundException e) {
 
+			e.printStackTrace();
+		}
+		catch(IOException e) {
 			e.printStackTrace();
 		}
 
