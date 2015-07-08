@@ -1,7 +1,8 @@
+<%@page import="comarch.zadanie1.SerializationImpl"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html" %>
-<%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean" %>
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html"%>
+<%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -9,21 +10,57 @@
 <title>Insert title here</title>
 </head>
 <body>
-<bean:message key="form.name"/><%= session.getAttribute("name") %>
-<BR/>
-<bean:message key="form.middlename"/><%= session.getAttribute("middleName") %>
-<BR/>
-<bean:message key="form.lastname"/><%= session.getAttribute("lastName") %>
-<BR/>
-<bean:message key="form.sex"/><%= session.getAttribute("sex") %>
-<BR/>
-<bean:message key="form.day"/><%= session.getAttribute("day") %>
-<BR/>
-<bean:message key="form.month"/><%= session.getAttribute("month") %>
-<BR/>
-<bean:message key="form.year"/><%= session.getAttribute("year") %>
-<BR/>
-<bean:message key="form.state"/><%= session.getAttribute("state") %>
+
+	<bean:message key="form.name" /><%=session.getAttribute("name")%>
+	<BR />
+	<bean:message key="form.middlename" /><%=session.getAttribute("middleName")%>
+	<BR />
+	<bean:message key="form.lastname" /><%=session.getAttribute("lastName")%>
+	<BR />
+	<bean:message key="form.sex" /><%=session.getAttribute("sex")%>
+	<BR />
+	<bean:message key="form.day" /><%=session.getAttribute("day")%>
+	<BR />
+	<bean:message key="form.month" /><%=session.getAttribute("month")%>
+	<BR />
+	<bean:message key="form.year" /><%=session.getAttribute("year")%>
+	<BR />
+	<bean:message key="form.state" /><%=session.getAttribute("state")%>
+	
+	 <% 
+        if(request.getParameter("buttonName") != null) {
+        	SerializationImpl sg = new SerializationImpl(
+    				(String) session.getAttribute("name"),
+    				(String) session.getAttribute("middleName"),
+    				(String) session.getAttribute("lastName"),
+    				(String) session.getAttribute("sex"),
+    				(String) session.getAttribute("day"),
+    				(String) session.getAttribute("month"),
+    				(String) session.getAttribute("year"),
+    				(String) session.getAttribute("state"));
+    		sg.saveMe();
+        }
+    %>
+
+    <form name="form1" method="POST">
+        <input type="HIDDEN" name="buttonName">
+        <input type="BUTTON" value="Save to Xml" onclick="button1()">
+    </form>
+
+  
+    <SCRIPT LANGUAGE="JavaScript">
+    
+        function button1()
+        {
+            document.form1.buttonName.value = "yes";
+            form1.submit();
+        } 
+    
+    </SCRIPT>
+    
+	
+
+
 
 </body>
 </html>

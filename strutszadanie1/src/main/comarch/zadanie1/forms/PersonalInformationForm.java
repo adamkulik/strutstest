@@ -1,5 +1,7 @@
 package comarch.zadanie1.forms;
 
+import java.io.Serializable;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts.action.ActionForm;
