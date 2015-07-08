@@ -48,7 +48,7 @@
 
 
     	&nbsp;
-    	
+    	<button type="button" name="back" onclick="history.back()">Wstecz</button>
 		<html:submit property="step" />
 
 		<!-- <html:cancel>

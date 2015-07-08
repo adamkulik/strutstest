@@ -52,11 +52,6 @@ public class PersonalInformationForm extends ActionForm {
 			HttpServletRequest request) {
 		ActionErrors errors = new ActionErrors();
 
-		System.out.print(name);
-		System.out.print(lastName);
-		System.out.print(middleName);
-		System.out.print(sex);
-
 		validateStrings(name, "name", errors);
 		validateStrings(lastName, "lastName", errors);
 		validateMiddleName(middleName, "middleName", errors);
