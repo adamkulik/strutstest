@@ -24,6 +24,7 @@
 		<html:radio property="ticketType" value="plane" onchange="disable()"/>
 		<BR/>
 		<bean:message key="prompt.customer.extraluggage" />
+<<<<<<< HEAD
 		<html:checkbox styleId="plane1" property="extraLuggage" disabled="false"/>
 		<BR/>
 		<bean:message key="prompt.customer.windowseat" />
@@ -31,6 +32,15 @@
 		<BR/>
 		<bean:message key="prompt.customer.meal" />
 		<html:checkbox styleId="plane3" property="meal" disabled="false"/>
+=======
+		<html:checkbox styleId="plane1" property="extraLuggage" disabled="true"/>
+		<BR/>
+		<bean:message key="prompt.customer.windowseat" />
+		<html:checkbox styleId="plane2" property="windowSeat" disabled="true"/>
+		<BR/>
+		<bean:message key="prompt.customer.meal" />
+		<html:checkbox styleId="plane3" property="meal" disabled="true"/>
+>>>>>>> origin/test
 		
 		<BR/>
 		<BR/>
@@ -40,6 +50,7 @@
 		<html:radio property="ticketType" value="train" onchange="enable()"/>
 		<BR/>
 		<bean:message key="prompt.customer.notransfer" />
+<<<<<<< HEAD
 		<html:checkbox styleId="train1" property="noTransfer" disabled="false"/>
 		<BR/>
 		<bean:message key="prompt.customer.bike" />
@@ -47,6 +58,15 @@
 		<BR/>
 		<bean:message key="prompt.customer.ticketclass" />
 		<html:select styleId="train3" property="ticketClass" disabled="false">
+=======
+		<html:checkbox styleId="train1" property="noTransfer" disabled="true"/>
+		<BR/>
+		<bean:message key="prompt.customer.bike" />
+		<html:checkbox styleId="train2" property="bike" disabled="true"/>
+		<BR/>
+		<bean:message key="prompt.customer.ticketclass" />
+		<html:select styleId="train3" property="ticketClass" disabled="true">
+>>>>>>> origin/test
 			<html:option value="">-- None --</html:option>
 			<html:option value="I"> I </html:option>
 			<html:option value="II"> II </html:option>
@@ -56,7 +76,11 @@
 			
 		
 
+<<<<<<< HEAD
 		<script language = "javascript" type = "text/javascript">
+=======
+		<script type = "text/javascript">
+>>>>>>> origin/test
 	function disable()
 	{
 	document.getElementById("plane1").disabled = false;
@@ -84,9 +108,13 @@
     	<button type="button" name="back" onclick="history.back()">Wstecz</button>
 		<html:submit property="step" />
 
+<<<<<<< HEAD
 		<!-- <html:cancel>
  
     	</html:cancel> -->
+=======
+
+>>>>>>> origin/test
 
 	</html:form>
 </div>
