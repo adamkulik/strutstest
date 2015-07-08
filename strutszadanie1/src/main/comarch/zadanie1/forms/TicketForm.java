@@ -66,6 +66,18 @@ public class TicketForm extends ActionForm {
 			HttpServletRequest request) {
 
 		ActionErrors errors = new ActionErrors();
+		if(ticketType == null){
+			
+			errors.add(ticketType, new ActionMessage("error.tickettype.empty" ));
+		}
+		
+		else if(ticketType.equals("train")){
+			validateClass( ticketClass,
+					 errors);
+		}
+
+
+
 		return errors;
 
 	}
@@ -79,4 +91,15 @@ public class TicketForm extends ActionForm {
 			windowSeat=false;
 			meal=false;
 		}
+
+	public boolean validateClass( String value,
+			ActionErrors errors) {
+		if ( value == null || value.trim().equals("")){ 
+			errors.add(value, new ActionMessage("error.ticketclass.empty" ));
+
+			return false;
+		}
+	
+		return true;
+	}
 }
