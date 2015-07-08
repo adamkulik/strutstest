@@ -1,8 +1,8 @@
 package comarch.zadanie1.forms;
 
-import java.io.Serializable;
 import java.util.Calendar;
 
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 

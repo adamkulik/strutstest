@@ -183,8 +183,8 @@
 
 <!-- ======================================== Message Resources Definitions -->
 
-    <message-resources parameter="MessageResources" /> 
-    <message-resources parameter="MessageResources_pl" />  
+    <message-resources parameter="MessageResources" />
+
 
 <!-- =============================================== Plug Ins Configuration -->
 
