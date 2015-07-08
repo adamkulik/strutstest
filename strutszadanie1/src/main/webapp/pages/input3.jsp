@@ -24,13 +24,13 @@
 		<html:radio property="ticketType" value="plane" onchange="disable()"/>
 		<BR/>
 		<bean:message key="prompt.customer.extraluggage" />
-		<html:checkbox styleId="plane1" property="extraLuggage" disabled="false"/>
+		<html:checkbox styleId="plane1" property="extraLuggage" disabled="true"/>
 		<BR/>
 		<bean:message key="prompt.customer.windowseat" />
-		<html:checkbox styleId="plane2" property="windowSeat" disabled="false"/>
+		<html:checkbox styleId="plane2" property="windowSeat" disabled="true"/>
 		<BR/>
 		<bean:message key="prompt.customer.meal" />
-		<html:checkbox styleId="plane3" property="meal" disabled="false"/>
+		<html:checkbox styleId="plane3" property="meal" disabled="true"/>
 		
 		<BR/>
 		<BR/>
@@ -40,13 +40,13 @@
 		<html:radio property="ticketType" value="train" onchange="enable()"/>
 		<BR/>
 		<bean:message key="prompt.customer.notransfer" />
-		<html:checkbox styleId="train1" property="noTransfer" disabled="false"/>
+		<html:checkbox styleId="train1" property="noTransfer" disabled="true"/>
 		<BR/>
 		<bean:message key="prompt.customer.bike" />
-		<html:checkbox styleId="train2" property="bike" disabled="false"/>
+		<html:checkbox styleId="train2" property="bike" disabled="true"/>
 		<BR/>
 		<bean:message key="prompt.customer.ticketclass" />
-		<html:select styleId="train3" property="ticketClass" disabled="false">
+		<html:select styleId="train3" property="ticketClass" disabled="true">
 			<html:option value="">-- None --</html:option>
 			<html:option value="I"> I </html:option>
 			<html:option value="II"> II </html:option>
@@ -56,7 +56,7 @@
 			
 		
 
-		<script language = "javascript" type = "text/javascript">
+		<script type = "text/javascript">
 	function disable()
 	{
 	document.getElementById("plane1").disabled = false;
@@ -84,9 +84,7 @@
     	<button type="button" name="back" onclick="history.back()">Wstecz</button>
 		<html:submit property="step" />
 
-		<!-- <html:cancel>
- 
-    	</html:cancel> -->
+
 
 	</html:form>
 </div>
