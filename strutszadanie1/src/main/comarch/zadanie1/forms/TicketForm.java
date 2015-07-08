@@ -77,7 +77,7 @@ public class TicketForm extends ActionForm {
 		}
 
 
-
+		if(errors.size() > 0) ticketType=null;
 		return errors;
 
 	}

@@ -22,6 +22,8 @@
 	<html:link page="/Language3.do?method=german">Polski</html:link>
 		
 	<html:errors />
+	
+
 
 	<html:form action="/Input3" method="GET">
 		<bean:message key="prompt.customer.planeticket" />
@@ -69,6 +71,7 @@
 	document.getElementById("train1").disabled = true;
 	document.getElementById("train2").disabled = true;
 	document.getElementById("train3").disabled = true;
+	radio=false;
 	}
 	function enable()
 	{
@@ -78,6 +81,7 @@
 		document.getElementById("train1").disabled = false;
 		document.getElementById("train2").disabled = false;
 		document.getElementById("train3").disabled = false;
+		radio=false;
 	}
 	</script>
 
