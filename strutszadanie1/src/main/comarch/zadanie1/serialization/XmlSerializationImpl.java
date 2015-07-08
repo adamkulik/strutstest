@@ -37,7 +37,7 @@ public class XmlSerializationImpl {
 
 		XStream xstream = new XStream();
 		xstream.autodetectAnnotations(true);
-		try (PrintWriter out = new PrintWriter("Summary.txt")) {
+		try (PrintWriter out = new PrintWriter("Summary.xml")) {
 
 			if (isPlaneTicket) {
 
