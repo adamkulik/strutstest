@@ -45,15 +45,21 @@
 
         <html:form action="/Input" method="POST">
  
+ 
+ <div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-4">
+    </div>
+    <div class="col-sm-4" style="background-color:lavenderblush;">
                 <bean:message key="prompt.customer.firstname" />:
-                <html:text styleId="name" property="name" size="16" maxlength="16" value="" />
+                <html:text styleClass="form-control" styleId="name" property="name" size="16" maxlength="16" value="" />
                 <BR />
                 <bean:message key="prompt.customer.middlename" />:
-                <html:text styleId="middleName" property="middleName" size="16"
+                <html:text styleClass="form-control" styleId="middleName" property="middleName" size="16"
                         maxlength="16" value=""/>
                 <BR />
                 <bean:message key="prompt.customer.lastname" />:
-                <html:text styleId="lastName" property="lastName" size="16"
+                <html:text styleClass="form-control" styleId="lastName" property="lastName" size="16"
                         maxlength="16" value=""/>
                 <BR />
                 <P />
@@ -62,11 +68,12 @@
  
                         <bean:message key="radio.name" />
                         :
- 
-                        <html:radio styleId="male" property="sex" value="male" />
+
+                        <html:radio styleClass="radio-inline" styleId="male" property="sex" value="male" />
+
                         <bean:message key="radio.sex.male" />
- 
-                        <html:radio styleId="female" property="sex" value="female" />
+ 						
+                        <html:radio styleClass="radio-inline" styleId="female" property="sex" value="female" />
                         <bean:message key="radio.sex.female" />
  
                 </div>
@@ -81,6 +88,11 @@
                 <html:submit styleClass="btn btn-info btn-medium" property="step" onclick="validateCode()">
                 <bean:message key="button.submit" />
                 </html:submit>
+    </div>
+   	<div class="col-sm-4"></div>
+  </div>
+</div>
+
  
                 <!-- <html:cancel>
  

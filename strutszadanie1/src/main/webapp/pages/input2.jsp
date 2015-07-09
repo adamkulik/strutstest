@@ -38,8 +38,15 @@
 	<html:errors />
 
 <logic:lessEqual name="security" value="6">
-	<html:form action="/Input2" method="POST">
 
+
+
+ <div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-4">
+    </div>
+    <div class="col-sm-4" style="background-color:lavenderblush;">
+    	<html:form action="/Input2" method="POST">
 		<bean:message key="prompt.customer.day" />:
 		<html:text styleId="day" property="day" size="2" maxlength="2" />
 		<BR />
@@ -76,6 +83,11 @@
     	</html:cancel> -->
 
 	</html:form>
+    </div>
+   	<div class="col-sm-4"></div>
+  </div>
+</div>
+
 </logic:lessEqual>
 	<SCRIPT type="text/javascript">
 		function validate() {

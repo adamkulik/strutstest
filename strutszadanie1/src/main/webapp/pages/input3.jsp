@@ -40,9 +40,12 @@
 
 	<html:form action="/Input3" method="GET">
 
-	
-
-		<bean:message key="prompt.customer.planeticket" />
+		 <div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-4">
+    </div>
+    <div class="col-sm-4" style="background-color:lavenderblush;">
+    		<bean:message key="prompt.customer.planeticket" />
 		<html:radio styleId="planeTicket" property="ticketType" value="plane"
 			onchange="disable()" />
 		<BR />
@@ -77,6 +80,18 @@
 			<html:option value="II"> II </html:option>
 			<html:option value="III"> III </html:option>
 		</html:select>
+		<BR />
+		<button class="btn btn-info btn-medium" type="button" name="back" onclick="history.back()"><bean:message key="button.back" /></button>
+		<html:submit styleClass="btn btn-info btn-medium" property="step" onclick="validate()">
+		<bean:message key="button.submit" />
+        </html:submit>
+
+    </div>
+   	<div class="col-sm-4"></div>
+  </div>
+</div>
+
+
 
 
 
@@ -129,10 +144,7 @@
 
 
     	&nbsp;
-    	<button class="btn btn-info btn-medium" type="button" name="back" onclick="history.back()"><bean:message key="button.back" /></button>
-		<html:submit styleClass="btn btn-info btn-medium" property="step" onclick="validate()">
-		<bean:message key="button.submit" />
-        </html:submit>
+
 
 
 	</html:form>
