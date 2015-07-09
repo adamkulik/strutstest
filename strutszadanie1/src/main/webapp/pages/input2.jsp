@@ -20,8 +20,9 @@
 	<html:link page="/Language2.do?method=german">Polski</html:link>
 
 	<html:errors />
-<logic:lessEqual name="security" value="6">
-	<html:form action="/Input2" method="POST">
+
+<logic:equal name="security" value="6">
+	<html:form action="/Input2" method="GET">
 
 		<bean:message key="prompt.customer.day" />:
 		<html:text styleId="day" property="day" size="2" maxlength="2" />
@@ -57,7 +58,7 @@
     	</html:cancel> -->
 
 	</html:form>
-</logic:lessEqual>
+</logic:equal>
 	<SCRIPT type="text/javascript">
 		function validate() {
 

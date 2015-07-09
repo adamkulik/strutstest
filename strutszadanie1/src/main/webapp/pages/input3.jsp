@@ -23,8 +23,8 @@
 	<html:errors />
 
 
-<logic:lessEqual name="security" value="3">
-	<html:form action="/Input3" method="POST">
+<logic:equal name="security" value="3">
+	<html:form action="/Input3" method="GET">
 		<bean:message key="prompt.customer.planeticket" />
 		<html:radio styleId="planeTicket" property="ticketType" value="plane"
 			onchange="disable()" />
@@ -117,7 +117,7 @@
 
 
 	</html:form>
-	</logic:lessEqual>
+	</logic:equal>
 </div>
 </body>
 

@@ -89,11 +89,4 @@ public class PersonalInformationForm extends ActionForm {
 			
 
 	}
-	public void reset(ActionMapping mapping,
-			HttpServletRequest request) {
-			
-			name=null;
-			middleName=null;
-			lastName=null;
-		}
 }

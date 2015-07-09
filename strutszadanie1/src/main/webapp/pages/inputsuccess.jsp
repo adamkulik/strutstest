@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<logic:lessEqual name="security" value="1">
+<logic:equal name="security" value="1">
 <body>
 	<bean:message key="form.name" /><%=session.getAttribute("name")%>
 	<BR />
@@ -107,5 +107,5 @@
 
 
 </body>
-</logic:lessEqual>
+</logic:equal>
 </html>

@@ -25,7 +25,7 @@
  
        
 
-        <html:form action="/Input" method="POST">
+        <html:form action="/Input" method="GET">
  
                 <bean:message key="prompt.customer.firstname" />:
                 <html:text styleId="name" property="name" size="16" maxlength="16" />
