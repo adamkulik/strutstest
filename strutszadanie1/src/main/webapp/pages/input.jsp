@@ -12,6 +12,7 @@
 </head>
  
 <div align="center">
+<div class="container">
 <div class="jumbotron">
         <h2>
         
@@ -20,10 +21,23 @@
  
         </h2>
 </div>
+</div>
+<nav class="navbar navbar-inverse navbar-fixed-bottom" >
+  <div class="container-fluid">
+    <div class="navbar-header">
+    </div>
+    <div>
+      <ul class="nav navbar-nav navbar-right" >
+        <li><html:link page="/Language.do?method=english"><bean:message key="language.en" /></html:link></li>
+        <li><html:link page="/Language.do?method=german"><bean:message key="language.pl" /></html:link></li>
+      </ul>
+    </div>
+  </div>
+</nav>
  
  
-        <html:link page="/Language.do?method=english">English</html:link>
-        <html:link page="/Language.do?method=german">Polski</html:link>
+        
+        
  
         <html:errors />
  
@@ -64,7 +78,9 @@
  
         &nbsp;
        
-                <html:submit styleClass="btn btn-info btn-medium" property="step" onclick="validateCode()" />
+                <html:submit styleClass="btn btn-info btn-medium" property="step" onclick="validateCode()">
+                <bean:message key="button.submit" />
+                </html:submit>
  
                 <!-- <html:cancel>
  

@@ -13,14 +13,27 @@
 </head>
 
 <div align="center">
+<div class="container">
 <div class="jumbotron">
 	<h2>
 		<bean:message key="exercise01.formpage.title" />
 	</h2>
 </div>
+</div>
 
-	<html:link page="/Language2.do?method=english">English</html:link>
-	<html:link page="/Language2.do?method=german">Polski</html:link>
+<nav class="navbar navbar-inverse navbar-fixed-bottom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+    </div>
+    <div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><html:link page="/Language2.do?method=english"><bean:message key="language.en" /></html:link></li>
+        <li><html:link page="/Language2.do?method=german"><bean:message key="language.pl" /></html:link></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
 
 	<html:errors />
 
@@ -53,8 +66,10 @@
 
 
     	&nbsp;
-    	<button class="btn btn-info btn-medium" type="button" name="back" onclick="history.back()">Wstecz</button>
-		<html:submit styleClass="btn btn-info btn-medium" property="step" onclick="validate()" />
+    	<button class="btn btn-info btn-medium" type="button" name="back" onclick="history.back()"><bean:message key="button.back" /></button>
+		<html:submit styleClass="btn btn-info btn-medium" property="step" onclick="validate()">
+		<bean:message key="button.submit" />
+        </html:submit>
 
 		<!-- <html:cancel>
  
