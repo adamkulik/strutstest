@@ -27,7 +27,6 @@
 
 	<html:form action="/Input3" method="GET">
 
-	
 
 		<bean:message key="prompt.customer.planeticket" />
 		<html:radio styleId="planeTicket" property="ticketType" value="plane"

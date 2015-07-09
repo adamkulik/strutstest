@@ -65,7 +65,7 @@ public class PersonalInformationForm extends ActionForm {
 	public void validateMiddleName(String field, String fieldName,
 			ActionErrors errors) {
 
-		if (!field.matches("[a-zA-Z]*"))
+		if (!field.matches("[a-zA-Z]*") ||  field.length() > 30)
 			errors.add(field, new ActionMessage("error." + fieldName
 					+ ".required"));
 	}
@@ -75,7 +75,7 @@ public class PersonalInformationForm extends ActionForm {
 	public void validateStrings(String field, String fieldName,
 			ActionErrors errors) {
 
-		if (field == null || field.length() < 1)
+		if (field == null || field.length() < 1 || field.length() > 30)
 		{
 			errors.add(field,
 			new ActionMessage("error." + fieldName + ".empty"));
