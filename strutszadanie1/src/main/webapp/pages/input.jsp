@@ -25,18 +25,18 @@
  
        
 
-        <html:form action="/Input" method="GET">
+        <html:form action="/Input" method="POST">
  
                 <bean:message key="prompt.customer.firstname" />:
-                <html:text styleId="name" property="name" size="16" maxlength="16" />
+                <html:text styleId="name" property="name" size="16" maxlength="16" value="" />
                 <BR />
                 <bean:message key="prompt.customer.middlename" />:
                 <html:text styleId="middleName" property="middleName" size="16"
-                        maxlength="16" />
+                        maxlength="16" value=""/>
                 <BR />
                 <bean:message key="prompt.customer.lastname" />:
                 <html:text styleId="lastName" property="lastName" size="16"
-                        maxlength="16" />
+                        maxlength="16" value=""/>
                 <BR />
                 <P />
  
@@ -69,6 +69,10 @@
         </html:form>
        
         <SCRIPT type="text/javascript">
+        
+        
+        
+
                 function validateStrings(param) {
                         var element = document.getElementById(param).value;
  
@@ -111,6 +115,7 @@
                         checkbox();
  
                 }
+ 
         </SCRIPT>
 </div>
 </body>

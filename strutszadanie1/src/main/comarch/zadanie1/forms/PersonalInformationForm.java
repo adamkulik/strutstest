@@ -69,6 +69,8 @@ public class PersonalInformationForm extends ActionForm {
 			errors.add(field, new ActionMessage("error." + fieldName
 					+ ".required"));
 	}
+	
+
 
 	public void validateStrings(String field, String fieldName,
 			ActionErrors errors) {

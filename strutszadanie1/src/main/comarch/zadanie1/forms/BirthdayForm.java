@@ -18,7 +18,7 @@ public class BirthdayForm extends ActionForm {
 	private String month;
 	private String year;
 	private String state;
-
+	
 	public String getDay() {
 		return day;
 	}
@@ -62,10 +62,11 @@ public class BirthdayForm extends ActionForm {
 		validateVoivodeship(state, errors);
 		return errors;
 
-	}
+	}	
+	
 
 	public void validateVoivodeship(String field, ActionErrors errors) {
-		System.out.print(state);
+	
 		if (field == null || field.isEmpty()) {
 			errors.add(field,
 					new ActionMessage("error.voivodeship.empty"));
@@ -75,7 +76,13 @@ public class BirthdayForm extends ActionForm {
 
 	public boolean validateBirthday(int minRange, int maxRange, String value,
 			ActionErrors errors, String fieldName) {
-
+		
+		if (value == null || value.isEmpty()) {
+			errors.add(value,
+					new ActionMessage("error.voivodeship.empty"));
+			return false;
+		}
+		
 		if (value.matches("[a-zA-Z]*")) {
 			errors.add(value, new ActionMessage("error." + fieldName));
 
