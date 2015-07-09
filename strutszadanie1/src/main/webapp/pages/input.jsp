@@ -24,7 +24,7 @@
         <html:errors />
  
        
- 
+
         <html:form action="/Input" method="GET">
  
                 <bean:message key="prompt.customer.firstname" />:

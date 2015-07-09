@@ -29,6 +29,7 @@ public class PersonalInformationAction extends Action{
 			request.getSession().setAttribute("middleName", personalInformation.getMiddleName());
 			request.getSession().setAttribute("lastName", personalInformation.getLastName());
 			request.getSession().setAttribute("sex",personalInformation.getSex());
+			request.getSession().setAttribute("security",6);
 			Scanner scanner = new Scanner(new File("wojewodztwa.txt"));
 			List<String> vList = new ArrayList<String>();
 			while (scanner.hasNext()) {

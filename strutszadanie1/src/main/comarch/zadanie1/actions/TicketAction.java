@@ -30,6 +30,7 @@ public class TicketAction extends Action {
 			request.getSession().setAttribute("meal",ticket.isMeal());
 			request.getSession().setAttribute("windowSeat",ticket.isWindowSeat());
 		}
+		request.getSession().setAttribute("security",(int)request.getSession().getAttribute("security")-2);
 		return mapping.findForward("success");
 		
 	}

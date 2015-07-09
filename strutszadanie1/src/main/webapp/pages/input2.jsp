@@ -21,7 +21,7 @@
 
 	<html:errors />
 
-
+<logic:equal name="security" value="6">
 	<html:form action="/Input2" method="GET">
 
 		<bean:message key="prompt.customer.day" />:
@@ -58,7 +58,7 @@
     	</html:cancel> -->
 
 	</html:form>
-
+</logic:equal>
 	<SCRIPT type="text/javascript">
 		function validate() {
 

@@ -24,6 +24,7 @@ public class BirthdayAction extends Action{
 			request.getSession().setAttribute("day", birthday.getDay());
 			request.getSession().setAttribute("month", birthday.getMonth());
 			request.getSession().setAttribute("year", birthday.getYear());
+			request.getSession().setAttribute("security",(int)request.getSession().getAttribute("security")-3);
 			return mapping.findForward("success");
 		}
 
