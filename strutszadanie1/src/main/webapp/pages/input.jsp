@@ -4,6 +4,7 @@
 <%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean"%>
  
 <html:html xhtml="true">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
  
 <head>
 <title></title>
@@ -11,11 +12,14 @@
 </head>
  
 <div align="center">
+<div class="jumbotron">
         <h2>
+        
                 <bean:message key="exercise01.formpage.title" />
  
  
         </h2>
+</div>
  
  
         <html:link page="/Language.do?method=english">English</html:link>

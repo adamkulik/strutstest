@@ -5,6 +5,7 @@
 <%@taglib uri="/WEB-INF/struts-logic.tld" prefix="logic"%>
 
 <html:html xhtml="true">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
 <head>
 <title></title>
@@ -12,9 +13,11 @@
 </head>
 
 <div align="center">
+<div class="jumbotron">
 	<h2>
 		<bean:message key="exercise01.formpage.title" />
 	</h2>
+</div>
 
 	<html:link page="/Language2.do?method=english">English</html:link>
 	<html:link page="/Language2.do?method=german">Polski</html:link>
