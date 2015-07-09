@@ -4,10 +4,11 @@
 <%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html" %>
 <%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean" %>
 <%@ taglib uri="/WEB-INF/struts-logic.tld" prefix="logic" %>
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
@@ -89,7 +90,7 @@
 	%>
 
 	<form name="form1" method="POST">
-		<input type="HIDDEN" name="buttonName"> <input type="BUTTON"
+		<input type="HIDDEN" name="buttonName"> <input type="BUTTON" class="btn btn-info btn-medium"
 			value="Save to Xml" onclick="button1()">
 	</form>
 
@@ -103,7 +104,7 @@
 
 
     	&nbsp;
-    	<button type="button" name="back" onclick="history.back()">Wstecz</button>
+    	<button type="button" class="btn btn-info btn-medium" name="back" onclick="history.back()">Wstecz</button>
 
 
 

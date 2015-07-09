@@ -118,8 +118,8 @@
 
 
     	&nbsp;
-    	<button type="button" name="back" onclick="history.back()">Wstecz</button>
-		<html:submit property="step" onclick="validate()" />
+    	<button class="btn btn-info btn-medium" type="button" name="back" onclick="history.back()">Wstecz</button>
+		<html:submit styleClass="btn btn-info btn-medium" property="step" onclick="validate()" />
 
 
 	</html:form>

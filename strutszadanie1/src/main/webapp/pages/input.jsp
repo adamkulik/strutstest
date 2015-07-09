@@ -60,11 +60,11 @@
  
                 <BR />
  
-                <html:reset value="Reset" />
+                <html:reset styleClass="btn btn-info btn-medium" value="Reset" />
  
         &nbsp;
        
-                <html:submit property="step" onclick="validateCode()" />
+                <html:submit styleClass="btn btn-info btn-medium" property="step" onclick="validateCode()" />
  
                 <!-- <html:cancel>
  
