@@ -36,7 +36,7 @@
 	<html:errors />
 
 
-<logic:lessEqual name="security" value="3">
+<logic:notEmpty name="month">
 
 	<html:form action="/Input3" method="GET">
 
@@ -63,7 +63,7 @@
 		<BR />
 		<BR />
 		<BR />
-		<hr>
+		<hr />
 		<bean:message key="prompt.customer.trainticket" />
 		<html:radio styleId="trainTicket" property="ticketType" value="train"
 			onchange="enable()" />
@@ -149,7 +149,7 @@
 
 
 	</html:form>
-	</logic:lessEqual>
+	</logic:notEmpty>
 </div>
 </body>
 

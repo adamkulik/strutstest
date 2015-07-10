@@ -37,7 +37,7 @@
 
 	<html:errors />
 
-<logic:lessEqual name="security" value="6">
+<logic:notEmpty name="name">
 
 
 
@@ -88,7 +88,7 @@
   </div>
 </div>
 
-</logic:lessEqual>
+</logic:notEmpty>
 	<SCRIPT type="text/javascript">
 		function validate() {
 
