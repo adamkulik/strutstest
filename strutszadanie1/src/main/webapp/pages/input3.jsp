@@ -44,7 +44,7 @@
   <div class="row">
     <div class="col-sm-4">
     </div>
-    <div class="col-sm-4" style="background-color:lavenderblush;">
+    <div class="col-sm-4" style="background-color:#EEEEEE;">
     		<bean:message key="prompt.customer.planeticket" />
 		<html:radio styleId="planeTicket" property="ticketType" value="plane"
 			onchange="disable()" />
@@ -63,6 +63,7 @@
 		<BR />
 		<BR />
 		<BR />
+		<hr>
 		<bean:message key="prompt.customer.trainticket" />
 		<html:radio styleId="trainTicket" property="ticketType" value="train"
 			onchange="enable()" />

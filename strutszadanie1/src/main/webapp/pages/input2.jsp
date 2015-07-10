@@ -45,7 +45,7 @@
   <div class="row">
     <div class="col-sm-4">
     </div>
-    <div class="col-sm-4" style="background-color:lavenderblush;">
+    <div class="col-sm-4" style="background-color:#EEEEEE;">
     	<html:form action="/Input2" method="POST">
 		<bean:message key="prompt.customer.day" />:
 		<html:text styleId="day" property="day" size="2" maxlength="2" />

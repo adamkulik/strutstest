@@ -5,12 +5,10 @@
  
 <html:html xhtml="true">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
- 
 <head>
 <title></title>
 <html:base />
 </head>
- 
 <div align="center">
 <div class="container">
 <div class="jumbotron">
@@ -50,7 +48,7 @@
   <div class="row">
     <div class="col-sm-4">
     </div>
-    <div class="col-sm-4" style="background-color:lavenderblush;">
+    <div class="col-sm-4" style="background-color:#EEEEEE;">
                 <bean:message key="prompt.customer.firstname" />:
                 <html:text styleClass="form-control" styleId="name" property="name" size="16" maxlength="16" value="" />
                 <BR />
@@ -69,12 +67,13 @@
                         <bean:message key="radio.name" />
                         :
 
-                        <html:radio styleClass="radio-inline" styleId="male" property="sex" value="male" />
+                       <label class="radio-inline"> <html:radio styleId="male" property="sex" value="male" />
 
                         <bean:message key="radio.sex.male" />
- 						
-                        <html:radio styleClass="radio-inline" styleId="female" property="sex" value="female" />
+ 						</label>
+                     <label class="radio-inline">   <html:radio styleId="female" property="sex" value="female" />
                         <bean:message key="radio.sex.female" />
+                        </label>
  
                 </div>
  
