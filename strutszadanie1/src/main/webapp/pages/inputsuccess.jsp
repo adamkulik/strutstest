@@ -92,7 +92,10 @@
 	<form name="form1" method="POST">
 		<input type="HIDDEN" name="buttonName"> <input type="BUTTON" class="btn btn-info btn-medium"
 			value="Save to Xml" onclick="button1()">
+
+			
 	</form>
+	
 
 
 	<SCRIPT LANGUAGE="JavaScript">
@@ -105,6 +108,7 @@
 
     	&nbsp;
     	<button type="button" class="btn btn-info btn-medium" name="back" onclick="history.back()">Wstecz</button>
+    	<html:link page="/Login.do" styleClass="btn btn-info btn-medium">Zaloguj</html:link>
 
 
 

@@ -64,6 +64,8 @@
     				type="comarch.zadanie1.forms.BirthdayForm"/>
     <form-bean	name="TicketForm"
     				type="comarch.zadanie1.forms.TicketForm"/>
+    <form-bean name="LoginForm"
+    				type="comarch.zadanie1.forms.LoginForm"/>
     				
     <!-- sample form bean descriptor for an ActionForm
         <form-bean
@@ -159,6 +161,21 @@
        		validate="true">
        		<forward name="success" path="/pages/inputsuccess.jsp"/>
        	</action>
+       	<action
+       		path="/Login"
+       		parameter="/pages/login.jsp"
+       		type="org.apache.struts.actions.ForwardAction"
+       		/>
+       	<action
+       		path="/Logged"
+       		type="comarch.zadanie1.actions.LoginAction"
+       		name="LoginForm"
+       		scope="session"
+       		input="/pages/login.jsp"
+       		validate="true">
+       		<forward name="success" path="/pages/loggedin.jsp"/>
+       		</action>
+       		
        			
        	<action
 			path="/Language"
@@ -189,6 +206,7 @@
 			>
 			<forward name="success" path="/pages/input3.jsp"/>
 		</action>
+
 
             
 
