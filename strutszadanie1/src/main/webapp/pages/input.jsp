@@ -4,8 +4,10 @@
 <%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean"%>
  
 <html:html xhtml="true">
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <head>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <title></title>
 <html:base />
 </head>
@@ -21,6 +23,15 @@
 </div>
 </div>
 <nav class="navbar navbar-inverse navbar-fixed-bottom" >
+<div class="container">
+
+  <p>Progress:</p> 
+  <div class="progress">
+    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+      0%
+    </div>
+  </div>
+</div>
   <div class="container-fluid">
     <div class="navbar-header">
     </div>
@@ -90,7 +101,8 @@
                 <bean:message key="button.submit" />
                 </html:submit>
     </div>
-   	<div class="col-sm-4"></div>
+   	<div class="col-sm-4">
+   	</div>
   </div>
 </div>
 
@@ -151,6 +163,9 @@
  
         </SCRIPT>
 </div>
+
+
+
 </body>
  
 </html:html>

@@ -5,8 +5,12 @@
 <%@taglib uri="/WEB-INF/struts-logic.tld" prefix="logic"%>
 
 <html:html xhtml="true">
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
 <head>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  
 <title></title>
 <html:base />
 </head>
@@ -20,20 +24,31 @@
 </div>
 </div>
 
-<nav class="navbar navbar-inverse navbar-fixed-bottom">
+<nav class="navbar navbar-inverse navbar-fixed-bottom" >
+<div class="container">
+
+  <p>Progress:</p> 
+  <div class="progress">
+    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:66.6%">
+     66.6%
+    </div>
+  </div>
+</div>
   <div class="container-fluid">
     <div class="navbar-header">
     </div>
     <div>
-      <ul class="nav navbar-nav navbar-right">
-        <li><html:link page="/Language3.do?method=english"><bean:message key="language.en" /></html:link></li>
-        <li><html:link page="/Language3.do?method=german"><bean:message key="language.pl" /></html:link></li>
+      <ul class="nav navbar-nav navbar-right" >
+        <li><html:link page="/Language.do?method=english"><bean:message key="language.en" /></html:link></li>
+        <li><html:link page="/Language.do?method=german"><bean:message key="language.pl" /></html:link></li>
         <li><html:link page="/Login.do"><bean:message key="login" /></html:link></li>
-        <li><html:link page="/Test.do"><bean:message key="mainpage" /></html:link></li>
+      	<li><html:link page="/Test.do"><bean:message key="mainpage" /></html:link></li>
       </ul>
     </div>
   </div>
 </nav>
+ 
+ 
 
 	<html:errors />
 
