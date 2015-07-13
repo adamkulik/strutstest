@@ -28,26 +28,6 @@
 			<constant-name>nameMaxLength</constant-name>
 			<constant-value>30</constant-value>
 		</constant>
-		<constant>
-
-			<constant-name>birthMinLength</constant-name>
-			<constant-value>1</constant-value>
-		</constant>
-		<constant>
-
-			<constant-name>birthMaxLength</constant-name>
-			<constant-value>2</constant-value>
-		</constant>
-		<constant>
-
-			<constant-name>yearMinLength</constant-name>
-			<constant-value>4</constant-value>
-		</constant>
-		<constant>
-
-			<constant-name>yearMaxLength</constant-name>
-			<constant-value>4</constant-value>
-		</constant>
 
 
 
@@ -130,57 +110,48 @@
 
 
 		<form name="BirthdayForm">
-			<field property="day" depends="required,minlength,maxlength,mask">
+			<field property="day" depends="required,intRange">
 				<arg0 key="prompt.customer.day" />
-				<arg1 key="${var:minlength}" resource="false" />
-				<arg2 key="${var:maxlength}" resource="false" />
+				<arg1 key="${var:min}" resource="false" />
+				<arg2 key="${var:max}" resource="false" />
 				<var>
-					<var-name>minlength</var-name>
-					<var-value>${birthMinLength}</var-value>
+					<var-name>min</var-name>
+					<var-value>1</var-value>
 				</var>
 				<var>
-					<var-name>maxlength</var-name>
-					<var-value>${birthMaxLength}</var-value>
-				</var>
-				<var>
-					<var-name>mask</var-name>
-					<var-value>^3[0-1]|[1-2][0-9]|0[1-9]$</var-value>
+					<var-name>max</var-name>
+					<var-value>31</var-value>
 				</var>
 
+
 			</field>
-			<field property="month" depends="required,minlength,maxlength,mask">
+			<field property="month" depends="required,intRange">
 				<arg0 key="prompt.customer.month" />
-				<arg1 key="${var:minlength}" resource="false" />
-				<arg2 key="${var:maxlength}" resource="false" />
+				<arg1 key="${var:min}" resource="false" />
+				<arg2 key="${var:max}" resource="false" />
+
 				<var>
-					<var-name>minlength</var-name>
-					<var-value>${birthMinLength}</var-value>
+					<var-name>min</var-name>
+					<var-value>1</var-value>
 				</var>
 				<var>
-					<var-name>maxlength</var-name>
-					<var-value>${birthMaxLength}</var-value>
-				</var>
-				<var>
-					<var-name>mask</var-name>
-					<var-value>^0[1-9]|1[012]$</var-value>
+					<var-name>max</var-name>
+					<var-value>12</var-value>
 				</var>
 
+
 			</field>
-			<field property="year" depends="required,minlength,maxlength,mask">
+			<field property="year" depends="required,intRange">
 				<arg0 key="prompt.customer.year" />
-				<arg1 key="${var:minlength}" resource="false" />
-				<arg2 key="${var:maxlength}" resource="false" />
+				<arg1 key="${var:min}" resource="false" />
+				<arg2 key="${var:max}" resource="false" />
 				<var>
-					<var-name>minlength</var-name>
-					<var-value>${yearMinLength}</var-value>
+					<var-name>min</var-name>
+					<var-value>1900</var-value>
 				</var>
 				<var>
-					<var-name>maxlength</var-name>
-					<var-value>${yearMaxLength}</var-value>
-				</var>
-				<var>
-					<var-name>mask</var-name>
-					<var-value>^19[0-9]\d|20[0-1][0-5]$</var-value>
+					<var-name>max</var-name>
+					<var-value>2015</var-value>
 				</var>
 
 			</field>
@@ -199,7 +170,7 @@
 
 
 			<field property="ticketClass" depends="requiredif">
-				<arg0 key="prompt.customer.ticketclass"  />
+				<arg0 key="prompt.customer.ticketclass" />
 
 				<var>
 					<var-name>field[0]</var-name>
