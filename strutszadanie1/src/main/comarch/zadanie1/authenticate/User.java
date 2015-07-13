@@ -1,16 +1,34 @@
 package comarch.zadanie1.authenticate;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+@Entity
+@Table(name="USERS")
 public class User {
-	
+	@Column(name="USERNAME")
 	private String username;
+	@Column(name="PASSWORD")
 	private String password;
+	@Id
 	private int userId;
+	@Column(name="VISIBLENAME")
+	private String visibleName;
 	
-	public User(String newUsername, String newPassword, int newUserId)
+	public User()
 	{
+		username = null;
+		password = null;
+		userId = 0;
+		visibleName = null;
+	}
+	public User(String newUsername, String newPassword, String newVisibleName)
+	{
+
 		username = newUsername;
 		password = newPassword;
-		userId = newUserId;
+		visibleName = newVisibleName;
 	}
 	public String getUsername() {
 		return username;
@@ -33,6 +51,14 @@ public class User {
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
+	public String getVisibleName() {
+		return visibleName;
+	}
+	public void setVisibleName(String visibleName) {
+		this.visibleName = visibleName;
+	}
+
+	
 	
 
 }

@@ -33,7 +33,7 @@ public class LoginAction extends Action {
 				request.getSession().setAttribute("loginerror", e.getMessage());
 				return mapping.findForward("failure");
 			}
-			request.getSession().setAttribute("userdisplay",newUser.getUsername());
+			request.getSession().setAttribute("userdisplay",newUser.getVisibleName());
 			return mapping.findForward("success");	
 		}
 

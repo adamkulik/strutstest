@@ -24,5 +24,6 @@
 		</property>
 		
 	 <mapping class="comarch.zadanie1.database.Voivodeship"/>
+	 <mapping class="comarch.zadanie1.authenticate.User"/>
 	</session-factory>
 </hibernate-configuration>
