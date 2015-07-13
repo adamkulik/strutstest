@@ -2,6 +2,7 @@ package comarch.zadanie1.authenticate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 @Entity
@@ -12,6 +13,7 @@ public class User {
 	@Column(name="PASSWORD")
 	private String password;
 	@Id
+	@GeneratedValue
 	private int userId;
 	@Column(name="VISIBLENAME")
 	private String visibleName;
