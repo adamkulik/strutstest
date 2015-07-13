@@ -49,6 +49,7 @@
 
    <global>
 
+                     
       <validator name="required"
             classname="org.apache.struts.validator.FieldChecks"
                method="validateRequired"

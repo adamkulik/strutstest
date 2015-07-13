@@ -9,8 +9,9 @@ import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.action.ActionMessage;
+import org.apache.struts.validator.ValidatorForm;
 
-public class BirthdayForm extends ActionForm {
+public class BirthdayForm extends ValidatorForm {
 
 	private static final long serialVersionUID = 1L;
 
@@ -51,51 +52,51 @@ public class BirthdayForm extends ActionForm {
 		this.state = state;
 	}
 
-	public ActionErrors validate(ActionMapping mapping,
-			HttpServletRequest request) {
-
-		ActionErrors errors = new ActionErrors();
-		validateBirthday(1, 31, day, errors, "day");
-		validateBirthday(1, 12, month, errors, "month");
-		validateBirthday(1900, Calendar.getInstance().get(Calendar.YEAR), year,
-				errors, "year");
-		validateVoivodeship(state, errors);
-		return errors;
-
-	}	
-	
-
-	public void validateVoivodeship(String field, ActionErrors errors) {
-	
-		if (field == null || field.isEmpty()) {
-			errors.add(field,
-					new ActionMessage("error.voivodeship.empty"));
-		}
-
-	}
-
-	public boolean validateBirthday(int minRange, int maxRange, String value,
-			ActionErrors errors, String fieldName) {
-		
-		if (value == null || value.isEmpty()) {
-			errors.add(value,
-					new ActionMessage("error.voivodeship.empty"));
-			return false;
-		}
-		
-		if (value.matches("[a-zA-Z]*")) {
-			errors.add(value, new ActionMessage("error." + fieldName));
-
-			return false;
-		}
-		int target = Integer.parseInt(value);
-
-		if (target < minRange || target > maxRange) {
-
-			errors.add(Integer.toString(target), new ActionMessage("error."
-					+ fieldName));
-			return false;
-		}
-		return true;
-	}
+//	public ActionErrors validate(ActionMapping mapping,
+//			HttpServletRequest request) {
+//
+//		ActionErrors errors = new ActionErrors();
+//		validateBirthday(1, 31, day, errors, "day");
+//		validateBirthday(1, 12, month, errors, "month");
+//		validateBirthday(1900, Calendar.getInstance().get(Calendar.YEAR), year,
+//				errors, "year");
+//		validateVoivodeship(state, errors);
+//		return errors;
+//
+//	}	
+//	
+//
+//	public void validateVoivodeship(String field, ActionErrors errors) {
+//	
+//		if (field == null || field.isEmpty()) {
+//			errors.add(field,
+//					new ActionMessage("error.voivodeship.empty"));
+//		}
+//
+//	}
+//
+//	public boolean validateBirthday(int minRange, int maxRange, String value,
+//			ActionErrors errors, String fieldName) {
+//		
+//		if (value == null || value.isEmpty()) {
+//			errors.add(value,
+//					new ActionMessage("error.voivodeship.empty"));
+//			return false;
+//		}
+//		
+//		if (value.matches("[a-zA-Z]*")) {
+//			errors.add(value, new ActionMessage("error." + fieldName));
+//
+//			return false;
+//		}
+//		int target = Integer.parseInt(value);
+//
+//		if (target < minRange || target > maxRange) {
+//
+//			errors.add(Integer.toString(target), new ActionMessage("error."
+//					+ fieldName));
+//			return false;
+//		}
+//		return true;
+//	}
 }

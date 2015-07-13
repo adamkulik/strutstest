@@ -6,8 +6,9 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionMessage;
+import org.apache.struts.validator.ValidatorForm;
 
-public class PersonalInformationForm extends ActionForm {
+public class PersonalInformationForm extends ValidatorForm {
 
 	private static final long serialVersionUID = 1L;
 
@@ -48,49 +49,49 @@ public class PersonalInformationForm extends ActionForm {
 		this.sex = sex;
 	}
 
-	public ActionErrors validate(ActionMapping mapping,
-			HttpServletRequest request) {
-		ActionErrors errors = new ActionErrors();
-
-		validateStrings(name, "name", errors);
-		validateStrings(lastName, "lastName", errors);
-		validateMiddleName(middleName, "middleName", errors);
-		validateStrings(sex, "sex", errors);
-		return errors;
-
-	}
-
-	
-
-	public void validateMiddleName(String field, String fieldName,
-			ActionErrors errors) {
-
-		if (!field.matches("[a-zA-Z]*"))
-			errors.add(field, new ActionMessage("error." + fieldName
-					+ ".required"));
-	}
-	
-
-
-	public void validateStrings(String field, String fieldName,
-			ActionErrors errors) {
-
-		if (field == null || field.length() < 1)
-		{
-			errors.add(field,
-			new ActionMessage("error." + fieldName + ".empty"));
-		}
-	
-
-		else if (!field.matches("[a-zA-Z]*"))
-		{
-			errors.add(field, new ActionMessage("error." + fieldName
-					+ ".required"));
-	
-		}
-			
-
-	}
+//	public ActionErrors validate(ActionMapping mapping,
+//			HttpServletRequest request) {
+//		ActionErrors errors = new ActionErrors();
+//
+//		validateStrings(name, "name", errors);
+//		validateStrings(lastName, "lastName", errors);
+//		validateMiddleName(middleName, "middleName", errors);
+//		validateStrings(sex, "sex", errors);
+//		return errors;
+//
+//	}
+//
+//	
+//
+//	public void validateMiddleName(String field, String fieldName,
+//			ActionErrors errors) {
+//
+//		if (!field.matches("[a-zA-Z]*"))
+//			errors.add(field, new ActionMessage("error." + fieldName
+//					+ ".required"));
+//	}
+//	
+//
+//
+//	public void validateStrings(String field, String fieldName,
+//			ActionErrors errors) {
+//
+//		if (field == null || field.length() < 1)
+//		{
+//			errors.add(field,
+//			new ActionMessage("error." + fieldName + ".empty"));
+//		}
+//	
+//
+//		else if (!field.matches("[a-zA-Z]*"))
+//		{
+//			errors.add(field, new ActionMessage("error." + fieldName
+//					+ ".required"));
+//	
+//		}
+//			
+//
+//	}
 	public void reset(ActionMapping mapping,
 			HttpServletRequest request) {
 			

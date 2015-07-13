@@ -7,9 +7,10 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionMessage;
+import org.apache.struts.validator.ValidatorForm;
 
 
-public class TicketForm extends ActionForm {
+public class TicketForm extends ValidatorForm {
 
 	private static final long serialVersionUID = 1L;
 	private String ticketType;
@@ -62,44 +63,44 @@ public class TicketForm extends ActionForm {
 		this.ticketType = ticketType;
 	}
 	
-	public ActionErrors validate(ActionMapping mapping,
-			HttpServletRequest request) {
-
-		ActionErrors errors = new ActionErrors();
-		if(ticketType == null){
-			
-			errors.add(ticketType, new ActionMessage("error.tickettype.empty" ));
-		}
-		
-		else if(ticketType.equals("train")){
-			validateClass( ticketClass,
-					 errors);
-		}
-
-
-		if(errors.size() > 0) reset(mapping,request);
-		return errors;
-
-	}
-	public void reset(ActionMapping mapping,
-			HttpServletRequest request) {
-			
-			bike=false;
-			ticketType=null;
-			noTransfer=false;
-			ticketClass=null;
-			windowSeat=false;
-			meal=false;
-		}
-
-	public boolean validateClass( String value,
-			ActionErrors errors) {
-		if ( value == null || value.trim().equals("")){ 
-			errors.add(value, new ActionMessage("error.ticketclass.empty" ));
-
-			return false;
-		}
-	
-		return true;
-	}
+//	public ActionErrors validate(ActionMapping mapping,
+//			HttpServletRequest request) {
+//
+//		ActionErrors errors = new ActionErrors();
+//		if(ticketType == null){
+//			
+//			errors.add(ticketType, new ActionMessage("error.tickettype.empty" ));
+//		}
+//		
+//		else if(ticketType.equals("train")){
+//			validateClass( ticketClass,
+//					 errors);
+//		}
+//
+//
+//		if(errors.size() > 0) reset(mapping,request);
+//		return errors;
+//
+//	}
+//	public void reset(ActionMapping mapping,
+//			HttpServletRequest request) {
+//			
+//			bike=false;
+//			ticketType=null;
+//			noTransfer=false;
+//			ticketClass=null;
+//			windowSeat=false;
+//			meal=false;
+//		}
+//
+//	public boolean validateClass( String value,
+//			ActionErrors errors) {
+//		if ( value == null || value.trim().equals("")){ 
+//			errors.add(value, new ActionMessage("error.ticketclass.empty" ));
+//
+//			return false;
+//		}
+//	
+//		return true;
+//	}
 }
