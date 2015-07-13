@@ -21,17 +21,19 @@ public class LoginAction extends Action {
 	        throws Exception {
 			LoginForm login = (LoginForm) form;
 			Authentication securityTest = new Authentication();
-			String usern = (String) request.getSession().getAttribute("username");
-			String passw = (String) request.getSession().getAttribute("password");
+			String usern = login.getUsername();
+			String passw = login.getPassword();
+			User newUser = null;
 			
 			try	{
-				User newUser =securityTest.authenticate(usern, passw);
+				newUser =securityTest.authenticate(usern, passw);
 			}
 			catch(AuthenticationException e)
 			{
 				request.getSession().setAttribute("loginerror", e.getMessage());
 				return mapping.findForward("failure");
 			}
+			request.getSession().setAttribute("userdisplay",newUser.getUsername());
 			return mapping.findForward("success");	
 		}
 

@@ -14,8 +14,8 @@ public class Authentication {
 	
 	public Authentication(){
 		users = new HashMap();
-		users.put("admin1", new User("admin","admin",1));
-		users.put("admin2", new User("akulik","akulik123",2));
+		users.put("admin1", new User("Administrator","admin",1));
+		users.put("admin2", new User("Adam Kulik","akulik123",2));
 	}
 	public User authenticate(String username, String password) throws AuthenticationException
 	{

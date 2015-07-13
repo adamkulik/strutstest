@@ -28,6 +28,8 @@
       <ul class="nav navbar-nav navbar-right" >
         <li><html:link page="/Language.do?method=english"><bean:message key="language.en" /></html:link></li>
         <li><html:link page="/Language.do?method=german"><bean:message key="language.pl" /></html:link></li>
+        <li><html:link page="/Login.do"><bean:message key="login" /></html:link></li>
+      	<li><html:link page="/Test.do"><bean:message key="mainpage" /></html:link></li>
       </ul>
     </div>
   </div>

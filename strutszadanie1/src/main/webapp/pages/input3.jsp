@@ -28,6 +28,8 @@
       <ul class="nav navbar-nav navbar-right">
         <li><html:link page="/Language3.do?method=english"><bean:message key="language.en" /></html:link></li>
         <li><html:link page="/Language3.do?method=german"><bean:message key="language.pl" /></html:link></li>
+        <li><html:link page="/Login.do"><bean:message key="login" /></html:link></li>
+        <li><html:link page="/Test.do"><bean:message key="mainpage" /></html:link></li>
       </ul>
     </div>
   </div>
@@ -36,7 +38,7 @@
 	<html:errors />
 
 
-<logic:notEmpty name="month">
+<logic:present name="month">
 
 	<html:form action="/Input3" method="GET">
 
@@ -149,7 +151,7 @@
 
 
 	</html:form>
-	</logic:notEmpty>
+	</logic:present>
 </div>
 </body>
 
