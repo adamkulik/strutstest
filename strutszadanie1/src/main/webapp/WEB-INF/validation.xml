@@ -6,69 +6,257 @@
 
 <form-validation>
 
-<!--
-     This is a minimal Validator form file with a couple of examples.
--->
+	<!-- This is a minimal Validator form file with a couple of examples. -->
 
-    <global>
+	<global>
 
-        <!-- An example global constant
-        <constant>
-            <constant-name>postalCode</constant-name>
-            <constant-value>^\d{5}\d*$</constant-value>
-        </constant>
-        end example-->
+		<!-- An example global constant <constant> <constant-name>postalCode</constant-name> 
+			<constant-value>^\d{5}\d*$</constant-value> </constant> end example -->
+		<constant>
 
-    </global>
+			<constant-name>nameMask</constant-name>
+			<constant-value>^[A-Za-z]*$</constant-value>
 
-    <formset>
+		</constant>
+		<constant>
 
-        <!-- An example form -->
-        <form name="logonForm">
-            <field
-                property="username"
-                depends="required">
-                    <arg key="logonForm.username"/>
-            </field>
-            <field
-                property="password"
-                depends="required,mask">
-                    <arg key="logonForm.password"/>
-                    <var>
-                        <var-name>mask</var-name>
-                        <var-value>^[0-9a-zA-Z]*$</var-value>
-                    </var>
-            </field>
-        </form>
+			<constant-name>nameMinLength</constant-name>
+			<constant-value>1</constant-value>
+		</constant>
+		<constant>
 
-    </formset>
+			<constant-name>nameMaxLength</constant-name>
+			<constant-value>30</constant-value>
+		</constant>
+		<constant>
 
-    <!-- An example formset for another locale -->
-    <formset language="fr">
+			<constant-name>birthMinLength</constant-name>
+			<constant-value>1</constant-value>
+		</constant>
+		<constant>
 
-        <constant>
-            <constant-name>postalCode</constant-name>
-            <constant-value>^[0-9a-zA-Z]*$</constant-value>
-        </constant>
+			<constant-name>birthMaxLength</constant-name>
+			<constant-value>2</constant-value>
+		</constant>
+		<constant>
 
-        <!-- An example form -->
-        <form name="logonForm">
-            <field
-                property="username"
-                depends="required">
-                    <arg key="logonForm.username"/>
-            </field>
-            <field
-                property="password"
-                depends="required,mask">
-                    <arg key="logonForm.password"/>
-                    <var>
-                        <var-name>mask</var-name>
-                        <var-value>^[0-9a-zA-Z]*$</var-value>
-                    </var>
-            </field>
-        </form>
+			<constant-name>yearMinLength</constant-name>
+			<constant-value>4</constant-value>
+		</constant>
+		<constant>
 
-   </formset>
+			<constant-name>yearMaxLength</constant-name>
+			<constant-value>4</constant-value>
+		</constant>
+
+
+
+	</global>
+
+	<formset>
+
+		<form name="InputForm">
+			<field property="name" depends="required,minlength,maxlength,mask">
+
+				<arg0 key="prompt.customer.firstname" />
+				<arg1 key="${var:minlength}" resource="false" />
+				<arg2 key="${var:maxlength}" resource="false" />
+
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>${nameMinLength}</var-value>
+				</var>
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>${nameMaxLength}</var-value>
+				</var>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${nameMask}</var-value>
+				</var>
+
+
+			</field>
+
+			<field property="middleName" depends="minlength,maxlength,mask">
+
+				<arg0 key="prompt.customer.middlename" />
+				<arg1 key="${var:minlength}" resource="false" />
+				<arg2 key="${var:maxlength}" resource="false" />
+
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>${nameMinLength}</var-value>
+				</var>
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>${nameMaxLength}</var-value>
+				</var>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${nameMask}</var-value>
+				</var>
+
+			</field>
+
+			<field property="lastName" depends="required,minlength,maxlength,mask">
+
+				<arg0 key="prompt.customer.lastname" />
+				<arg1 key="${var:minlength}" resource="false" />
+				<arg2 key="${var:maxlength}" resource="false" />
+
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>${nameMinLength}</var-value>
+				</var>
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>${nameMaxLength}</var-value>
+				</var>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${nameMask}</var-value>
+				</var>
+
+			</field>
+			<field property="sex" depends="required">
+				<arg0 key="radio.name" />
+			</field>
+
+
+
+
+		</form>
+
+
+		<form name="BirthdayForm">
+			<field property="day" depends="required,minlength,maxlength,mask">
+				<arg0 key="prompt.customer.day" />
+				<arg1 key="${var:minlength}" resource="false" />
+				<arg2 key="${var:maxlength}" resource="false" />
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>${birthMinLength}</var-value>
+				</var>
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>${birthMaxLength}</var-value>
+				</var>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^3[0-1]|[1-2][0-9]|0[1-9]$</var-value>
+				</var>
+
+			</field>
+			<field property="month" depends="required,minlength,maxlength,mask">
+				<arg0 key="prompt.customer.month" />
+				<arg1 key="${var:minlength}" resource="false" />
+				<arg2 key="${var:maxlength}" resource="false" />
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>${birthMinLength}</var-value>
+				</var>
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>${birthMaxLength}</var-value>
+				</var>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^0[1-9]|1[012]$</var-value>
+				</var>
+
+			</field>
+			<field property="year" depends="required,minlength,maxlength,mask">
+				<arg0 key="prompt.customer.year" />
+				<arg1 key="${var:minlength}" resource="false" />
+				<arg2 key="${var:maxlength}" resource="false" />
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>${yearMinLength}</var-value>
+				</var>
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>${yearMaxLength}</var-value>
+				</var>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^19[0-9]\d|20[0-1][0-5]$</var-value>
+				</var>
+
+			</field>
+			<field property="state" depends="required">
+				<arg0 key="prompt.customer.voivodeship" />
+
+			</field>
+
+		</form>
+
+		<form name="TicketForm">
+			<field property="ticketType" depends="required">
+				<arg0 key="prompt.customer.tickettype" />
+			</field>
+
+
+
+			<field property="ticketClass" depends="requiredif">
+				<arg0 key="prompt.customer.ticketclass"  />
+
+				<var>
+					<var-name>field[0]</var-name>
+					<var-value>ticketType</var-value>
+				</var>
+				<var>
+					<var-name>fieldTest[0]</var-name>
+					<var-value>EQUAL</var-value>
+				</var>
+				<var>
+					<var-name>fieldValue[0]</var-name>
+					<var-value>train</var-value>
+				</var>
+
+			</field>
+
+		</form>
+
+	</formset>
+
+	<formset>
+
+		<!-- An example form -->
+		<form name="logonForm">
+			<field property="username" depends="required">
+				<arg key="logonForm.username" />
+			</field>
+			<field property="password" depends="required,mask">
+				<arg key="logonForm.password" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[0-9a-zA-Z]*$</var-value>
+				</var>
+			</field>
+		</form>
+
+	</formset>
+
+	<!-- An example formset for another locale -->
+	<formset language="fr">
+
+		<constant>
+			<constant-name>postalCode</constant-name>
+			<constant-value>^[0-9a-zA-Z]*$</constant-value>
+		</constant>
+
+		<!-- An example form -->
+		<form name="logonForm">
+			<field property="username" depends="required">
+				<arg key="logonForm.username" />
+			</field>
+			<field property="password" depends="required,mask">
+				<arg key="logonForm.password" />
+
+			</field>
+		</form>
+
+	</formset>
 
 </form-validation>
