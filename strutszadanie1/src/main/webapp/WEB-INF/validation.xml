@@ -29,7 +29,11 @@
 			<constant-value>30</constant-value>
 		</constant>
 
+		<constant>
 
+			<constant-name>registerMaxLength</constant-name>
+			<constant-value>32</constant-value>
+		</constant>
 
 	</global>
 
@@ -190,24 +194,40 @@
 		</form>
 
 		<form name="RegisterForm">
-			<field property="newusername" depends="required">
+			<field property="newusername" depends="required,maxlength">
 				<arg0 key="register.newusername" />
+				<arg1 key="${var:maxlength}" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>${registerMaxLength}</var-value>
+				</var>
+
 			</field>
-			<field property="newpassword" depends="required">
+			<field property="newpassword" depends="required,maxlength">
 				<arg0 key="register.newpassword" />
+				<arg1 key="${var:maxlength}" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>${registerMaxLength}</var-value>
+				</var>
 			</field>
 
-				<field property="passwordcheck" depends="validwhen">
-					<msg name="validwhen" key="errors.matchfields" />
-					<arg0 key="register.passwordcheck" />
-					<arg1 key="register.newpassword" />
-					<var>
-						<var-name>test</var-name>
-						<var-value>(*this* == newpassword)</var-value>
-					</var>
-				</field>
-			<field property="visiblename" depends="required">
+			<field property="passwordcheck" depends="validwhen">
+				<msg name="validwhen" key="errors.matchfields" />
+				<arg0 key="register.passwordcheck" />
+				<arg1 key="register.newpassword" />
+				<var>
+					<var-name>test</var-name>
+					<var-value>(*this* == newpassword)</var-value>
+				</var>
+			</field>
+			<field property="visiblename" depends="required,maxlength">
 				<arg0 key="register.visiblename" />
+				<arg1 key="${var:maxlength}" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>${registerMaxLength}</var-value>
+				</var>
 			</field>
 
 		</form>
