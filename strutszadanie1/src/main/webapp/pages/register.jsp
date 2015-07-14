@@ -3,7 +3,7 @@
 <%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html"%>
 <%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean"%>
 <%@taglib uri="/WEB-INF/struts-logic.tld" prefix="logic"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 
 <html>
 <head>
@@ -32,13 +32,11 @@
 	<div class="container-fluid">
 		<div class="navbar-header"></div>
 		<div>
-			<ul class="nav navbar-nav navbar-right">
-				<li><html:link page="/Language4.do?method=english">
-						<bean:message key="language.en" />
-					</html:link></li>
-				<li><html:link page="/Language4.do?method=german">
-						<bean:message key="language.pl" />
-					</html:link></li>
+			<ul class="nav navbar-nav navbar-right">				
+       				 <li><html:link page="/Login.do"><bean:message key="login" /></html:link></li>
+   	   			  	 <li><html:link page="/Test.do"><bean:message key="mainpage" /></html:link></li>
+   	 		 	     <li><html:link page="/Language.do?method=english"><bean:message key="language.en" /></html:link></li>
+    			     <li><html:link page="/Language.do?method=german"><bean:message key="language.pl" /></html:link></li>
 			</ul>
 		</div>
 	</div>
