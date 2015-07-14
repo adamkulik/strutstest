@@ -26,7 +26,7 @@ public class LoginAction extends Action {
 			User newUser = null;
 			
 			try	{
-				newUser =securityTest.authenticate(usern, passw);
+				newUser = securityTest.authenticate(usern, passw);
 			}
 			catch(AuthenticationException e)
 			{
