@@ -25,5 +25,8 @@
 		
 	 <mapping class="comarch.zadanie1.database.Voivodeship"/>
 	 <mapping class="comarch.zadanie1.authenticate.User"/>
+	 <mapping class="comarch.zadanie1.tickets.PlaneTicket"/>
+	 <mapping class="comarch.zadanie1.tickets.TrainTicket"/>
+	 <mapping class="comarch.zadanie1.tickets.Ticket"/>
 	</session-factory>
 </hibernate-configuration>

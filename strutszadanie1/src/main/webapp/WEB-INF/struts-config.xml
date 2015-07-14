@@ -192,6 +192,13 @@
        		validate="true">
        		<forward name="success" path="/pages/login.jsp"/>
        		</action>
+       	<action path="/ShowTickets"
+       			type="comarch.zadanie1.actions.ShowTicketsAction"
+       			parameter="/pages/showtickets.jsp"
+       			validate="false"
+       			/>
+       	
+       	
        		
        			
        	<action

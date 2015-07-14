@@ -34,6 +34,7 @@ public class LoginAction extends Action {
 				return mapping.findForward("failure");
 			}
 			request.getSession().setAttribute("userdisplay",newUser.getVisibleName());
+			request.getSession().setAttribute("userid",newUser.getUserId());
 			return mapping.findForward("success");	
 		}
 
