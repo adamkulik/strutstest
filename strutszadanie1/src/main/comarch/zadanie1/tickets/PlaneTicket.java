@@ -1,11 +1,16 @@
 package comarch.zadanie1.tickets;
 
+import java.io.Serializable;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name="PLANETICKET")
 @PrimaryKeyJoinColumn(name="TICKETID")
-public class PlaneTicket extends Ticket {
+public class PlaneTicket extends Ticket implements Serializable {
+	
+
+	private static final long serialVersionUID = 1L;
 	
 	@Column(name="EXTRALUGGAGE")
 	private boolean extraLuggage;
