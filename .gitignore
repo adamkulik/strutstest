@@ -35,3 +35,4 @@ $RECYCLE.BIN/
 .Trashes
 
 # Directories potentially created on remote AFP share
+strutszadanie1/src/main/resources/hibernate.cfg.xml
