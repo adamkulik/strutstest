@@ -189,6 +189,29 @@
 
 		</form>
 
+		<form name="RegisterForm">
+			<field property="newusername" depends="required">
+				<arg0 key="register.newusername" />
+			</field>
+			<field property="newpassword" depends="required">
+				<arg0 key="register.newpassword" />
+			</field>
+
+				<field property="passwordcheck" depends="validwhen">
+					<msg name="validwhen" key="errors.matchfields" />
+					<arg0 key="register.passwordcheck" />
+					<arg1 key="register.newpassword" />
+					<var>
+						<var-name>test</var-name>
+						<var-value>(*this* == newpassword)</var-value>
+					</var>
+				</field>
+			<field property="visiblename" depends="required">
+				<arg0 key="register.visiblename" />
+			</field>
+
+		</form>
+
 	</formset>
 
 	<formset>

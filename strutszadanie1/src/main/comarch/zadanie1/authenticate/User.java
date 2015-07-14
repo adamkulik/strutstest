@@ -8,7 +8,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="USERS")
 public class User {
-	@Column(name="USERNAME")
+	@Column(name="USERNAME", unique=true)
 	private String username;
 	@Column(name="PASSWORD")
 	private String password;
