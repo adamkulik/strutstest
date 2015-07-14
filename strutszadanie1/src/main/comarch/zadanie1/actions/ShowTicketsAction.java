@@ -14,6 +14,7 @@ import org.hibernate.Transaction;
 
 import comarch.zadanie1.database.HibernateUtil;
 import comarch.zadanie1.tickets.PlaneTicket;
+import comarch.zadanie1.tickets.TrainTicket;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -24,7 +25,8 @@ public class ShowTicketsAction extends Action {
 			HttpServletRequest request,HttpServletResponse response)
 	        throws Exception {
 		
-		List<PlaneTicket> list = new ArrayList<>();
+		List<PlaneTicket> list1 = new ArrayList<>();
+		List<TrainTicket> list2 = new ArrayList<>();
 		Session session = HibernateUtil.configureSessionFactory().openSession();
 		Transaction tx = null;
 		try {
@@ -35,7 +37,25 @@ public class ShowTicketsAction extends Action {
 					.hasNext();) {
 
 				PlaneTicket plane = (PlaneTicket) iterator.next();
-				list.add(plane);
+				list1.add(plane);
+
+			}
+			tx.commit();
+		} catch (HibernateException e) {
+			if (tx != null)
+				tx.rollback();
+			e.printStackTrace();
+		}
+		request.getSession().setAttribute("planeticketslist", list1);
+		try {
+			tx = session.beginTransaction();
+			List<?> trainTickets = session.createQuery(
+					"FROM TrainTicket WHERE USERID="+request.getSession().getAttribute("userid")).list();
+			for (Iterator<?> iterator = trainTickets.iterator(); iterator
+					.hasNext();) {
+
+				TrainTicket train = (TrainTicket) iterator.next();
+				list2.add(train);
 
 			}
 			tx.commit();
@@ -46,7 +66,7 @@ public class ShowTicketsAction extends Action {
 		} finally {
 			session.close();
 		}
-		request.getSession().setAttribute("planeticketslist", list);
+		request.getSession().setAttribute("trainticketslist", list2);
 		return mapping.findForward("success");
 		
 	}
