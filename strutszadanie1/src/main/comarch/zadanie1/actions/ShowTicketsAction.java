@@ -46,7 +46,7 @@ public class ShowTicketsAction extends Action {
 		} finally {
 			session.close();
 		}
-		request.getSession().setAttribute("planeticketlist", list);
+		request.getSession().setAttribute("planeticketslist", list);
 		return mapping.findForward("success");
 		
 	}

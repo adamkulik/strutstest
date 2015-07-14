@@ -11,14 +11,14 @@
 </head>
 <body>
 <logic:iterate name="planeticketslist" id="planeticketslistid">
-<bean:write name="planeticketslistid" property="firstname"/>
-<bean:write name="planeticketslistid" property="middlename"/>
-<bean:write name="planeticketslistid" property="lastname"/>
+<bean:write name="planeticketslistid" property="firstName"/>
+<bean:write name="planeticketslistid" property="middleName"/>
+<bean:write name="planeticketslistid" property="lastName"/>
 <bean:write name="planeticketslistid" property="birthDay"/>
 <bean:write name="planeticketslistid" property="birthMonth"/>
 <bean:write name="planeticketslistid" property="birthYear"/>
 <bean:write name="planeticketslistid" property="voivodship"/>
-<bean:write name="planeticketslistid" property="extraluggage"/>
+<bean:write name="planeticketslistid" property="extraLuggage"/>
 <bean:write name="planeticketslistid" property="meal"/>
 <bean:write name="planeticketslistid" property="windowSeat"/>
 </logic:iterate>
