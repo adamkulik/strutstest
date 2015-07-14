@@ -13,6 +13,14 @@ public class PlaneTicket extends Ticket {
 	private boolean meal;
 	@Column(name="WINDOWSEAT")
 	private boolean windowSeat;
+	public PlaneTicket(boolean extraLuggage, boolean meal, boolean windowSeat) {
+		this.extraLuggage = extraLuggage;
+		this.meal = meal;
+		this.windowSeat = windowSeat;
+	}
+	public PlaneTicket() {
+
+	}
 	public boolean isExtraLuggage() {
 		return extraLuggage;
 	}

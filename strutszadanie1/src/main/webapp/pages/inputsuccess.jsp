@@ -34,12 +34,24 @@
 				<div class="navbar-header"></div>
 				<div>
 					<ul class="nav navbar-nav navbar-right">
-					 <li><html:link page="/Register.do"><bean:message key="register.page" /></html:link></li>
-       				 <li><html:link page="/Login.do"><bean:message key="login" /></html:link></li>
-   	   			  	 <li><html:link page="/Test.do"><bean:message key="mainpage" /></html:link></li>
-   	 		 	     <li><html:link page="/Language.do?method=english"><bean:message key="language.en" /></html:link></li>
-    			     <li><html:link page="/Language.do?method=german"><bean:message key="language.pl" /></html:link></li>
-				   </ul>
+						<li><html:link page="/Register.do">
+								<bean:message key="register.page" />
+							</html:link></li>
+						<li><html:link page="/Login.do">
+								<bean:message key="login" />
+							</html:link></li>
+						<li><html:link page="/Test.do">
+								<bean:message key="mainpage" />
+							</html:link></li>
+						<li><html:link page="/Language.do?method=english">
+								<bean:message key="language.en" />
+							</html:link></li>
+						<li><html:link
+								page="/L
+    			     anguage.do?method=german">
+								<bean:message key="language.pl" />
+							</html:link></li>
+					</ul>
 				</div>
 			</div>
 		</nav>
@@ -83,30 +95,21 @@
 					XmlSerializationImpl sg;
 					if (session.getAttribute("ticketType").equals("plane")) {
 
-						sg = new XmlSerializationImpl(
-								(String) session.getAttribute("name"),
-								(String) session.getAttribute("middleName"),
-								(String) session.getAttribute("lastName"),
-								(String) session.getAttribute("sex"),
-								(String) session.getAttribute("day"),
-								(String) session.getAttribute("month"),
-								(String) session.getAttribute("year"),
+						sg = new XmlSerializationImpl((String) session.getAttribute("name"),
+								(String) session.getAttribute("middleName"), (String) session.getAttribute("lastName"),
+								(String) session.getAttribute("sex"), (String) session.getAttribute("day"),
+								(String) session.getAttribute("month"), (String) session.getAttribute("year"),
 								(String) session.getAttribute("ticketType"),
 								(Boolean) session.getAttribute("extraLuggage"),
-								(Boolean) session.getAttribute("windowSeat"),
-								(Boolean) session.getAttribute("meal"),
+								(Boolean) session.getAttribute("windowSeat"), (Boolean) session.getAttribute("meal"),
 								(String) session.getAttribute("state"));
 
 					} else {
 
-						sg = new XmlSerializationImpl(
-								(String) session.getAttribute("name"),
-								(String) session.getAttribute("middleName"),
-								(String) session.getAttribute("lastName"),
-								(String) session.getAttribute("sex"),
-								(String) session.getAttribute("day"),
-								(String) session.getAttribute("month"),
-								(String) session.getAttribute("year"),
+						sg = new XmlSerializationImpl((String) session.getAttribute("name"),
+								(String) session.getAttribute("middleName"), (String) session.getAttribute("lastName"),
+								(String) session.getAttribute("sex"), (String) session.getAttribute("day"),
+								(String) session.getAttribute("month"), (String) session.getAttribute("year"),
 								(String) session.getAttribute("ticketType"),
 								(String) session.getAttribute("ticketClass"),
 								(Boolean) session.getAttribute("noTransfer"),
@@ -140,9 +143,13 @@
 		<button type="button" class="btn btn-info btn-medium" name="back"
 			onclick="history.back()">Wstecz</button>
 		<html:link page="/Login.do" styleClass="btn btn-info btn-medium">Zaloguj</html:link>
+		<logic:present name="userid">
+			<html:link page="/AddTicket.do" styleClass="btn btn-info btn-medium">Zapisz do bazy</html:link>
+		</logic:present>
 
 
 
 	</body>
 </logic:present>
+
 </html>

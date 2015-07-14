@@ -39,6 +39,6 @@
 			</div>
 		</nav>
 Welcome <%=session.getAttribute("userdisplay")%>
-<jsp:forward page="ShowTickets.do" /> 
+<%-- <jsp:forward page="ShowTickets.do" />  --%>
 </body>
 </html>

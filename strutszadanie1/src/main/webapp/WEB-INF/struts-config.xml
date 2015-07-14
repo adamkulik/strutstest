@@ -179,6 +179,24 @@
        		<forward name="failure" path="/pages/loginfailure.jsp"/>
        		</action>
        	<action
+   			path="/ShowTickets"
+   			type="comarch.zadanie1.actions.ShowTicketsAction"
+   			validate="false">
+   			<forward name="success" path="/pages/showTickets.jsp"/>
+ 		</action>
+       		
+       	<action
+       		path="/AddTicket"
+       		type="comarch.zadanie1.actions.AddTicketAction"
+       		name="TicketForm"
+       		scope="session"
+       		input="/pages/inputsuccess.jsp"
+       		validate="true">
+       		<forward name="success" path="/ShowTickets.do"/>
+        </action>
+  
+       	
+       	<action
        		path="/Register"
        		parameter="/pages/register.jsp"
        		type="org.apache.struts.actions.ForwardAction"
@@ -192,11 +210,6 @@
        		validate="true">
        		<forward name="success" path="/pages/login.jsp"/>
        		</action>
-       	<action path="/ShowTickets"
-       			type="comarch.zadanie1.actions.ShowTicketsAction"
-       			parameter="/pages/showtickets.jsp"
-       			validate="false"
-       			/>
        	
        	
        		

@@ -21,6 +21,7 @@ public abstract class Ticket {
 	private int birthMonth;
 	@Column(name="BIRTHYEAR")
 	private int birthYear;
+
 	@Column(name="VOIVODSHIP")
 	private String voivodship;
 	@Column(name="USERID")
@@ -28,6 +29,22 @@ public abstract class Ticket {
 	@Id
 	@GeneratedValue
 	private int ticketId;
+	
+	public Ticket(String firstName, String middleName, String lastName, int birthDay, int birthMonth, int birthYear,
+			String voivodship, int userId, int ticketId) {
+		this.firstName = firstName;
+		this.middleName = middleName;
+		this.lastName = lastName;
+		this.birthDay = birthDay;
+		this.birthMonth = birthMonth;
+		this.birthYear = birthYear;
+		this.voivodship = voivodship;
+		this.userId = userId;
+		this.ticketId = ticketId;
+	}
+	public Ticket() {
+
+	}
 	public int getUserId() {
 		return userId;
 	}

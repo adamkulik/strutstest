@@ -19,7 +19,7 @@ public class LanguageSelectAction extends DispatchAction {
 		throws Exception {
 	 
 			request.getSession().setAttribute(
-					Globals.LOCALE_KEY, Locale.ENGLISH);
+					Globals.LOCALE_KEY, Locale.ENGLISH );
 	 
 			return mapping.findForward("success");
 	}
