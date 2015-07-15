@@ -5,6 +5,7 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 @Entity
+
 @Table(name="PLANETICKET")
 @PrimaryKeyJoinColumn(name="TICKETID")
 public class PlaneTicket extends Ticket implements Serializable {

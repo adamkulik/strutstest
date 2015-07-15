@@ -29,6 +29,7 @@ public class ShowTicketsAction extends Action {
 		List<TrainTicket> list2 = new ArrayList<>();
 		Session session = HibernateUtil.configureSessionFactory().openSession();
 		Transaction tx = null;
+	
 		try {
 			tx = session.beginTransaction();
 			List<?> planeTickets = session.createQuery(

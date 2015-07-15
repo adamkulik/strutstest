@@ -6,6 +6,7 @@ import javax.persistence.Table;
 import javax.persistence.*;
 @Entity
 @Table(name="TICKETS")
+
 @Inheritance(strategy=InheritanceType.JOINED)
 public abstract class Ticket {
 	

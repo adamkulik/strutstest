@@ -218,7 +218,8 @@
 		</div>
 
 
-		<%
+		<%	
+			request.getSession().setAttribute("pass", 15);
 			if (request.getParameter("buttonName") != null) {
 
 					XmlSerializationImpl sg;

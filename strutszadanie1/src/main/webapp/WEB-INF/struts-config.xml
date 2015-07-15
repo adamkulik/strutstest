@@ -191,8 +191,9 @@
        		name="TicketForm"
        		scope="session"
        		input="/pages/inputsuccess.jsp"
-       		validate="true">
-       		<forward name="success" path="/ShowTickets.do"/>
+       		validate="true"       		>
+       		<forward name="success" path="/ShowTickets.do" redirect="true"/>
+       		
         </action>
   
        	

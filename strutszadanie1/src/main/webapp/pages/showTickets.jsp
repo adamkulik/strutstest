@@ -71,9 +71,6 @@
 						<td><bean:write name="planeticketslistid"
 								property="windowSeat" /></td>
 
-
-
-
 					</tr>
 				</logic:iterate>
 			</tbody>
