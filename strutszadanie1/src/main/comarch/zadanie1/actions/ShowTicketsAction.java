@@ -20,11 +20,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class ShowTicketsAction extends Action {
-	
-	public ActionForward execute(ActionMapping mapping,ActionForm form,
-			HttpServletRequest request,HttpServletResponse response)
-	        throws Exception {
-		
+
+	public ActionForward execute(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse response)
+			throws Exception {
+
 		List<PlaneTicket> list1 = new ArrayList<>();
 		List<TrainTicket> list2 = new ArrayList<>();
 		Session session = HibernateUtil.configureSessionFactory().openSession();
@@ -32,7 +32,9 @@ public class ShowTicketsAction extends Action {
 		try {
 			tx = session.beginTransaction();
 			List<?> planeTickets = session.createQuery(
-					"FROM PlaneTicket WHERE USERID="+request.getSession().getAttribute("userid")).list();
+					"FROM PlaneTicket WHERE USERID="
+							+ request.getSession().getAttribute("userid"))
+					.list();
 			for (Iterator<?> iterator = planeTickets.iterator(); iterator
 					.hasNext();) {
 
@@ -50,7 +52,9 @@ public class ShowTicketsAction extends Action {
 		try {
 			tx = session.beginTransaction();
 			List<?> trainTickets = session.createQuery(
-					"FROM TrainTicket WHERE USERID="+request.getSession().getAttribute("userid")).list();
+					"FROM TrainTicket WHERE USERID="
+							+ request.getSession().getAttribute("userid"))
+					.list();
 			for (Iterator<?> iterator = trainTickets.iterator(); iterator
 					.hasNext();) {
 
@@ -68,7 +72,7 @@ public class ShowTicketsAction extends Action {
 		}
 		request.getSession().setAttribute("trainticketslist", list2);
 		return mapping.findForward("success");
-		
+
 	}
 
 }
